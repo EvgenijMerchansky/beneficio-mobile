@@ -1,0 +1,9 @@
+{
+  "email": "Enter your email address",
+  "password": "Enter your password",
+  "forgotPassword": "Forgot password?",
+  "signin": "Sign-in",
+  "or": "Or",
+  "existAccount": "Don't have an account?",
+  "signup": "Sign-up"
+}
