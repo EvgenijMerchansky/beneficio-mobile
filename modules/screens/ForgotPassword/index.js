@@ -3,9 +3,9 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 
 import DevelopmentState from '../../components/DevelopmentState';
 
-class SignUp extends React.Component{
+class ForgotPassword extends React.Component{
   render() {
-    console.log(this, 'SignUp screen');
+    console.log(this, 'Forgot password screen');
     return (
       <View style={{
         flex: 1,
@@ -19,4 +19,4 @@ class SignUp extends React.Component{
   }
 }
 
-export default SignUp;
+export default ForgotPassword;
