@@ -1,62 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/alpha_logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app-logo-transparent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/applicationLogo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/avatar.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/complete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/completed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/dk.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/done.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/level-logo-test.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/lock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/logout.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/logout2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/open.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/payment.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/privacy.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/profile.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/profile2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/profile3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/profile4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/social.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/using-guide.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/components/ActivityIndicatorWrapper/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/components/HeaderTabs/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/components/ListItem/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/components/ModalWrapper/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/components/TabsContainer/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/constants/guide.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/constants/privacy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/helpers/checkout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/navigation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/ConfirmNewPassword/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Guide/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Level/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/NameScreen/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/PasswordScreen/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Payment/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/PhoneScreen/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/PrivacyPolicy/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Profile/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Social/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/VerifyEmail/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/Beneficio-second.png" afterPath="$PROJECT_DIR$/assets/Beneficio-second.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/beneficio.png" afterPath="$PROJECT_DIR$/assets/beneficio.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/App.js" afterPath="$PROJECT_DIR$/modules/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/constants/apis.js" afterPath="$PROJECT_DIR$/modules/constants/apis.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" afterPath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" afterPath="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/SignUp/index.js" afterPath="$PROJECT_DIR$/modules/screens/SignUp/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/SplashScreen/index.js" afterPath="$PROJECT_DIR$/modules/screens/SplashScreen/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-    </list>
+    <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -895,16 +840,16 @@
       <workItem from="1564313046557" duration="217000" />
       <workItem from="1564317812968" duration="3583000" />
       <workItem from="1564388835194" duration="2154000" />
-      <workItem from="1564391830975" duration="9098000" />
+      <workItem from="1564391830975" duration="9281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275944000" />
+    <option name="totallyTimeSpent" value="276127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16149506" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -914,7 +859,7 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
