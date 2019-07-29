@@ -26,6 +26,9 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.beneficio.found"
+    },
+    "android": {
+      "package": "com.beneficio.beneficio"
     }
   }
 }

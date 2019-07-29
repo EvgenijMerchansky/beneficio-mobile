@@ -8,30 +8,43 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "Base64": "^1.0.2",
     "axios": "^0.19.0",
+    "buffer": "^5.2.1",
     "expo": "^33.0.0",
     "i": "^0.3.6",
     "i18next": "^17.0.4",
-    "npm": "^6.9.0",
+    "js-base64": "^2.5.1",
+    "js-sha1": "^0.6.0",
+    "npm": "^6.10.1",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-i18next": "^10.11.2",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
+    "react-native-base64": "0.0.2",
     "react-native-device-info": "^2.1.3",
     "react-native-elements": "^1.1.0",
+    "react-native-htmlview": "^0.14.0",
     "react-native-i18n": "^2.0.15",
+    "react-native-image-zoom-viewer": "^2.2.26",
+    "react-native-liqpay": "^0.3.2",
     "react-native-locale-detector": "^1.0.1",
     "react-native-router-flux": "^4.0.6",
+    "react-native-sha1": "^1.2.3",
+    "react-native-simple-dialogs": "^1.1.0",
+    "react-native-tab-navigator": "^0.3.4",
     "react-native-web": "^0.11.4",
     "react-navigation": "^3.11.0",
     "react-redux": "^7.1.0",
     "react-router-redux": "^4.0.8",
     "redux": "^4.0.1",
     "redux-axios-middleware": "^4.0.0",
-    "redux-saga": "^1.0.3"
+    "redux-saga": "^1.0.3",
+    "sha1": "^1.1.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-preset-expo": "^5.1.1",
+    "react-navigation-material-bottom-tabs": "^1.0.0"
   },
   "rnpm": {
     "assets": [
