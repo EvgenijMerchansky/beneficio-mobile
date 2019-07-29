@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/app-logo-small-transparent.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/new-splash.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/Beneficio-second.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/alpha_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/applicationLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avatar.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/beneficio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/dk.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/level-logo-test.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/logout.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/profile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/profile2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/profile3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/splash.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/test.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/test.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/redux/reducers/test-reducer.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -861,12 +842,12 @@
       <workItem from="1564313046557" duration="217000" />
       <workItem from="1564317812968" duration="3583000" />
       <workItem from="1564388835194" duration="2154000" />
-      <workItem from="1564391830975" duration="9981000" />
+      <workItem from="1564391830975" duration="10025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276827000" />
+    <option name="totallyTimeSpent" value="276871000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
