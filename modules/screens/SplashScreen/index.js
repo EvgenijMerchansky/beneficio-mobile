@@ -17,11 +17,11 @@ import ActivityIndicator from "../../components/ActivityIndicatorWrapper";
 import { SIGN_IN } from "../../constants/apis";
 
 const messages = {
-  email: "Email field cannot be empty",
-  password: "Password field cannot be empty",
+  email: "Поле email - не может быть пустым",
+  password: "Поле password - не может быть пустым",
   badRequest:
-  "You have entered an incorrect email or password.\n" +
-  "Try logging in again.\nIf you do not have an account in our system - register it"
+  "Вы ввели некоректные логин или пароль.\n" +
+  "Попробуйте еще раз.\nЕсли у Вас еще нет аккаунта - зарегестрируйтесь"
 };
 
 class SplashScreen extends React.Component {
@@ -97,7 +97,7 @@ class SplashScreen extends React.Component {
               ...state,
               loading: false
             }));
-            Alert.alert("Incorrect credentials", messages.badRequest);
+            Alert.alert("Неверные данные", messages.badRequest);
           });
         } else {
           response.json().then(data => {
@@ -196,7 +196,7 @@ class SplashScreen extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View style={styles.logo}>
             <Image
@@ -206,7 +206,7 @@ class SplashScreen extends React.Component {
           </View>
           <View>
             <TextInput
-              placeholder="Enter your email address"
+              placeholder="Введите електронный адрес"
               style={styles.field}
               onChangeText={text => this.validate(text, "email")}
               value={this.state.email.value}
@@ -214,7 +214,7 @@ class SplashScreen extends React.Component {
               label="email"
             />
             <TextInput
-              placeholder="Enter your password"
+              placeholder="Введите пароль"
               style={styles.field}
               onChangeText={text => this.validate(text, "password")}
               value={this.state.password.value}
@@ -225,7 +225,7 @@ class SplashScreen extends React.Component {
             <TouchableOpacity
               onPress={() => this.props.navigation.push("ForgotPassword")}
             >
-              <Text style={styles.forgotPasswordButton}>Forgot password?</Text>
+              <Text style={styles.forgotPasswordButton}>Забыли пароль?</Text>
             </TouchableOpacity>
             {this.state.email.isValid && this.state.password.isValid ? (
                 <TouchableOpacity
@@ -233,7 +233,7 @@ class SplashScreen extends React.Component {
                   onPress={() => this.pushToDashboard()}
                   disabled={false}
                 >
-                  <Text style={styles.signInColor}>Sign in</Text>
+                  <Text style={styles.signInColor}>Вход</Text>
                 </TouchableOpacity>
               ) : (
                 <TouchableOpacity
@@ -241,16 +241,16 @@ class SplashScreen extends React.Component {
                   onPress={() => this.pushToDashboard()}
                   disabled={true}
                 >
-                  <Text style={styles.signInColor}>Sign in</Text>
+                  <Text style={styles.signInColor}>Вход</Text>
                 </TouchableOpacity>
               )}
           </View>
           <View style={styles.signUpBlock}>
-            <Text style={styles.question}>Don't have an account?</Text>
+            <Text style={styles.question}>Еще нет аккаунта?</Text>
             <TouchableOpacity
               onPress={() => this.props.navigation.push("SignUp")}
             >
-              <Text style={styles.signUpLink}>{` Sign up`}</Text>
+              <Text style={styles.signUpLink}>{` Регистрация`}</Text>
             </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>

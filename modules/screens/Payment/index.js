@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  StyleSheet,
   WebView,
   Alert,
 } from "react-native";
@@ -53,8 +52,8 @@ class Payment extends React.Component {
           }));
           
           Alert.alert(
-            "Level was not found",
-            "Please, try again."[
+            "Уровень не найден",
+            "Пожалуйста попробуйте снова."[
               {
                 text: "OK",
                 onPress: () => this.props.navigation.pop()
@@ -106,18 +105,5 @@ class Payment extends React.Component {
     )
   }
 }
-
-const styles = StyleSheet.create({
-  loadContainer: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "#f9f8fd"
-  },
-  horizontal: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 10
-  }
-});
 
 export default Payment;

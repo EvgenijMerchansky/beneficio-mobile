@@ -24,7 +24,7 @@ const Step = ({ title, description, imageUrl, index, onModalOpen }) => {
     <View style={stepStyles.container}>
       <View style={stepStyles.stepNumber}>
         <Text style={stepStyles.stepNumberText}>
-          Step {index}: {title}
+          Шаг {index}: {title}
         </Text>
       </View>
       <View style={stepStyles.stepWrapper}>
@@ -261,12 +261,12 @@ class Level extends React.Component {
           </View>
           <View style={styles.bodyTime}>
             <Text style={styles.bodyTimeText}>
-              Time for reproduce: {this.state.level.time}
+              Время прохождения: {this.state.level.time}
             </Text>
           </View>
           <View style={styles.bodyPossibleEarnings}>
             <Text style={styles.bodyPossibleEarningsText}>
-              Possible earnings: ${this.state.level.possibleEarnings}
+              Заработок: ${this.state.level.possibleEarnings}
             </Text>
           </View>
           <View style={styles.body}>
@@ -277,7 +277,7 @@ class Level extends React.Component {
             </View>
             <View style={styles.bodySubtitle}>
               <Text style={styles.bodySubtitleText}>
-                {this.state.level.subtitle}
+                Шаги для прохождения:
               </Text>
             </View>
             <View style={styles.bodySteps}>
@@ -297,7 +297,7 @@ class Level extends React.Component {
         </ScrollView>
         <View style={styles.completeButtonWrapper}>
           <Text style={styles.finishDescriptionText}>
-            *After click on this button next level will be open*
+            {`*Переход в меню оплаты комиссионных*`}
           </Text>
           <TouchableOpacity
             style={styles.completeButton}
@@ -310,7 +310,7 @@ class Level extends React.Component {
             })}
           >
             <Text style={styles.completeButtonText}>
-              Unlock next level (${this.state.level.percentPrice})
+              Открыть следующий уровень (${this.state.level.percentPrice})
             </Text>
           </TouchableOpacity>
         </View>

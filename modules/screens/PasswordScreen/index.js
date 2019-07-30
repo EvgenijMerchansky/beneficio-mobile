@@ -54,7 +54,7 @@ class PasswordScreen extends React.Component {
               ...state,
               loading: false
             }));
-            Alert.alert("Something was wrong.", "Please, try again later.", [
+            Alert.alert("Что то пошло не так.", "Пожалуйста попробуйте еще раз.", [
               {
                 text: "OK",
                 onPress: () => this.props.navigation.push("SplashScreen")
@@ -74,9 +74,9 @@ class PasswordScreen extends React.Component {
           loading: false
         }));
         
-        Alert.alert("Congratulations!", "Account was successfully created.", [
+        Alert.alert("Поздравляем!", "Аккаунт был успешно создан.", [
           {
-            text: "Done",
+            text: "Отлично",
             onPress: () => this.props.navigation.push("SplashScreen")
           }
         ]);
@@ -125,12 +125,12 @@ class PasswordScreen extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text style={styles.headerText}>Enter your passwrod:</Text>
+            <Text style={styles.headerText}>Введите пароль:</Text>
             <TextInput
-              placeholder="Create your password"
+              placeholder="Введите пароль"
               style={styles.field}
               onChangeText={text => this.validate(text)}
               value={this.state.password.value}
@@ -147,10 +147,10 @@ class PasswordScreen extends React.Component {
               onPress={() => this.signUpAsync()}
               disabled={!this.state.password.isValid}
             >
-              <Text style={styles.nextColor}>Sign in</Text>
+              <Text style={styles.nextColor}>Завершить</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              5/5 Enter your password and finish registration.
+              5/5 Введите Ваш пароль.
             </Text>
           </View>
         </KeyboardAvoidingView>
@@ -199,6 +199,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

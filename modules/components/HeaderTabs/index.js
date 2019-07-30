@@ -23,7 +23,7 @@ class HeaderTabs extends React.Component {
               }
             ]}
           >
-            Active
+            Активные
           </Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -47,7 +47,7 @@ class HeaderTabs extends React.Component {
               }
             ]}
           >
-            Completed
+            Успешные
           </Text>
         </TouchableOpacity>
       </View>

@@ -35,7 +35,7 @@ class VerifyEmail extends React.Component {
   verify = () => {
     if (+this.state.enteredCode !== this.state.verificationCode) {
       Alert.alert(
-        "Invalid verification code.\nPlease recheck and try again",
+        "Не коррктный код верификации.\nПожалуйста, проверьте и попробуйте снова",
         null
       );
       
@@ -46,8 +46,8 @@ class VerifyEmail extends React.Component {
       }));
     } else {
       Alert.alert(
-        "Success",
-        "You have successfully verified your email address.",
+        "Успешно!",
+        "Вы успешно верифицировали ваш электронный адрес",
         [
           {
             text: "OK",
@@ -94,14 +94,14 @@ class VerifyEmail extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
             <Text style={styles.headerText}>
-              Enter 6 digits from email letter:
+              Введите 6 цифр с письма:
             </Text>
             <TextInput
-              placeholder="Enter 6 digits from latter"
+              placeholder="Введите 6 цифр с письма"
               style={styles.field}
               onChangeText={text => this.validateDigits(text)}
               value={this.state.enteredCode}
@@ -118,10 +118,10 @@ class VerifyEmail extends React.Component {
               onPress={() => this.verify()}
               disabled={!this.state.codeFormatIsValid}
             >
-              <Text style={styles.nextColor}>Verify</Text>
+              <Text style={styles.nextColor}>Верифицировать</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              2/5 Verify your email for confirm identity.
+              2/5 Верифицируйте ваш электронный адрес.
             </Text>
           </View>
         </KeyboardAvoidingView>
@@ -170,6 +170,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

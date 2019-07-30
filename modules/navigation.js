@@ -38,7 +38,8 @@ const Navigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   Dashboard: {
@@ -60,7 +61,8 @@ const Navigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   ConfirmNewPassword: {
@@ -90,7 +92,8 @@ const Navigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   NameScreen: {
@@ -121,7 +124,8 @@ const Navigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   PasswordScreen: {
@@ -136,61 +140,65 @@ const Navigator = createStackNavigator({
       headerTitleStyle: {
         fontWeight: "bold"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   ProfileScreen: {
     screen: Profile,
     navigationOptions: {
-      title: "",
+      title: "Профиль",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0
       },
-      headerTitle: "Profile",
+      headerTitle: "Профиль",
       headerTitleStyle: {
         fontWeight: "light",
         color: "#fff"
       },
-      headerTintColor: "#fff"
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
     }
   },
   LevelScreen: {
     screen: Level,
     navigationOptions: {
-      title: "Info",
+      title: "Детали реализации",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0
       },
-      headerTitle: "Detail information",
+      headerTitle: "Детали реализации:",
       headerTitleStyle: {
         fontWeight: "light",
         color: "#fff"
       },
-      headerTintColor: "#fff"
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
     }
   },
   Guide: {
     screen: Guide,
     navigationOptions: {
-      title: "Guide",
+      title: "Гайд",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0
       },
-      headerTitle: "Guide",
+      headerTitle: "Гайд",
       headerTitleStyle: {
         fontWeight: "light",
         color: "#fff"
       },
-      headerTintColor: "#fff"
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
     }
   },
   PrivacyPolicy: {
     screen: PrivacyPolicy,
     navigationOptions: {
-      title: "Privacy policy",
+      title: "Конфиденциальность",
       headerStyle: {
         backgroundColor: "#f9f8fd",
         borderBottomWidth: 0,
@@ -199,13 +207,14 @@ const Navigator = createStackNavigator({
         fontWeight: "light",
         color: "#000",
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   Social: {
     screen: Social,
     navigationOptions: {
-      title: "Community",
+      title: "Сообщество",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0
@@ -214,13 +223,14 @@ const Navigator = createStackNavigator({
         fontWeight: "light",
         color: "#fff"
       },
-      headerTintColor: "#fff"
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
     }
   },
   Payment: {
     screen: Payment,
     navigationOptions: {
-      title: "Unlock next level",
+      title: "Открыть следующий",
       headerStyle: {
         backgroundColor: "#f9f8fd",
         borderBottomWidth: 0
@@ -229,13 +239,14 @@ const Navigator = createStackNavigator({
         fontWeight: "light",
         color: "#000"
       },
-      headerTintColor: "#000"
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
     }
   },
   PaymentRules: {
     screen: PaymentRules,
     navigationOptions: {
-      title: "Payment rules",
+      title: "Комиссии",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0
@@ -244,7 +255,8 @@ const Navigator = createStackNavigator({
         fontWeight: "light",
         color: "#fff"
       },
-      headerTintColor: "#fff"
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
     }
   }
 });

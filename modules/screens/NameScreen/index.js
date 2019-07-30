@@ -63,12 +63,12 @@ class NameScreen extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text style={styles.headerText}>Enter your name and surname:</Text>
+            <Text style={styles.headerText}>Введите имя и фамилию:</Text>
             <TextInput
-              placeholder="Enter your name"
+              placeholder="Введите имя"
               style={styles.field}
               onChangeText={text => this.validate(text, "name")}
               value={this.state.name.value}
@@ -76,7 +76,7 @@ class NameScreen extends React.Component {
               label="name"
             />
             <TextInput
-              placeholder="Enter your surname"
+              placeholder="Введите фамилию"
               style={styles.field}
               onChangeText={text => this.validate(text, "surname")}
               value={this.state.surname.value}
@@ -88,10 +88,10 @@ class NameScreen extends React.Component {
               onPress={() => this.goNext()}
               disabled={!stateIsValid}
             >
-              <Text style={styles.nextColor}>Next</Text>
+              <Text style={styles.nextColor}>Дальше</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              3/5 Add your name and surname.
+              3/5 Добавьте имя и фамилию.
             </Text>
           </View>
         </KeyboardAvoidingView>
@@ -140,6 +140,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

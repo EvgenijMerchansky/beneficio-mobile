@@ -13,19 +13,19 @@ class Social extends React.Component {
       <View style={styles.container}>
         <View style={styles.socialHeader}>
           <Text style={styles.socialHeaderText}>
-            Our community
+            Наше сообщество
           </Text>
           <Text style={styles.headerSubtext}>
-            Join to our community and see news from us.
+            {`Присоединяйся к нашему сообществу\nчто бы быть в курсе всех последних новостей`}
           </Text>
         </View>
         <ScrollView style={styles.socialBody}>
           <Text style={styles.socialTitle}>
-            Links
+            Ссылки
           </Text>
           <View style={styles.socialBodyWebsite}>
             <Text style={styles.socialBodyWebsiteText}>
-              {`Website: `}
+              {`Веб-сайт: `}
               <Text style={{color: '#8dc5ff'}}
                     onPress={() => Linking.openURL('http://google.com')}>
                 beneficio.com
@@ -34,7 +34,7 @@ class Social extends React.Component {
           </View>
           <View style={styles.socialBodyEmail}>
             <Text style={styles.socialBodyEmailText}>
-              {`Email: `}
+              {`Електронный адрес: `}
               <Text style={{color: '#8dc5ff'}}
                     onPress={() => Linking.openURL('mailto:beneficioinc@gmail.com')}>
                 beneficioinc
@@ -78,15 +78,15 @@ class Social extends React.Component {
             </Text>
           </View>
           <Text style={styles.socialTitle}>
-            Partners
+            Наши партнеры
           </Text>
           <Text style={styles.socialBodyFacebookText}>
-            {`{Partner name}: {partner link}`}
+            {`{Имя партнера}: {ссылка на партнера}`}
           </Text>
         </ScrollView>
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Join to us!
+            Присоединяйся к нам!
           </Text>
         </View>
       </View>

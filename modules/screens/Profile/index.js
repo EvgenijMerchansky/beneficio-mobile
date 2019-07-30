@@ -25,29 +25,31 @@ class Profile extends React.Component {
           <View style={styles.headerName}>
             <Text style={styles.headerNameText}>{user.firstName} {user.lastName}</Text>
             <Text style={styles.headerNameSubtext}>
-              (beginner)
+              {user.completedLevels.length < 10 ? "(Начинающий)" :
+                user.completedLevels.length < 20 ? "(Опытный)" :
+                  user.completedLevels.length < 40 ? "(Профессионал)" : "(Мастер)"}
             </Text>
           </View>
         </View>
         <View style={styles.body}>
           <View style={styles.bodyTitleBlock}>
             <Text style={styles.bodyTitleBlockText}>
-              Personal information
+              Персональные данные
             </Text>
           </View>
           <View style={styles.bodyEmail}>
             <Text style={styles.bodyEmailText}>
-              Email: {user.email}
+              Имейл: {user.email}
             </Text>
           </View>
           <View style={styles.bodyPhone}>
             <Text style={styles.bodyPhoneText}>
-              Phone: {user.phone}
+              Телефон: {user.phone}
             </Text>
           </View>
           <View style={styles.bodyTitleBlock}>
             <Text style={styles.bodyTitleBlockText}>
-              Social links
+              Сообщества
             </Text>
           </View>
           <View style={styles.bodyTelegram}>
@@ -62,12 +64,12 @@ class Profile extends React.Component {
           </View>
           <View style={styles.bodyTitleBlock}>
             <Text style={styles.bodyTitleBlockText}>
-              Progress
+              Прогресс прохождений
             </Text>
           </View>
           <View style={styles.bodyCompletedLevels}>
             <Text style={styles.bodyCompletedLevelsText}>
-              Completed levels: {user.completedLevels.length}
+              Пройденные уровни: {user.completedLevels.length}
             </Text>
           </View>
         </View>
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f9f8fd"
   },
   headerImage: {
-    
+    marginBottom: 15,
   },
   headerImageDimensions: {
     width: 160,

@@ -70,8 +70,8 @@ class ForgotPassword extends React.Component {
             loading: false
           }));
           Alert.alert(
-            "Incorrect email",
-            "A user with this email address was not found.",
+            "Неправильный электронный адрес",
+            "Пользователь с таким электронным адресом не найден.",
             [
               {
                 text: "OK",
@@ -100,11 +100,11 @@ class ForgotPassword extends React.Component {
   onEmailRecheck = () => {
     if (this.state.email.isValid) {
       Alert.alert(
-        "Confirm email address?",
+        "Подтвердить этот электронный адрес?",
         this.state.email.value,
         [
           {
-            text: "Cancel",
+            text: "Отмена",
             onPress: () => {},
             style: "cancel"
           },
@@ -176,12 +176,12 @@ class ForgotPassword extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text style={styles.headerText}>Reset password:</Text>
+            <Text style={styles.headerText}>Изменить пароль:</Text>
             <TextInput
-              placeholder="Email"
+              placeholder="Электронный адрес"
               style={styles.field}
               onChangeText={text => this.onChangeEmailField(text)}
               value={this.state.email.value}
@@ -189,7 +189,7 @@ class ForgotPassword extends React.Component {
               label="email"
             />
             <TextInput
-              placeholder="New password"
+              placeholder="Новый пароль"
               style={styles.field}
               onChangeText={text => this.onChangePasswordField(text)}
               value={this.state.password.value}
@@ -202,10 +202,10 @@ class ForgotPassword extends React.Component {
               onPress={() => this.onEmailRecheck()}
               disabled={!formIsValid}
             >
-              <Text style={styles.nextColor}>Next</Text>
+              <Text style={styles.nextColor}>Дальше</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              Enter your email and new password.
+              1/2 Введите электронный адрес.
             </Text>
           </View>
         </KeyboardAvoidingView>
@@ -254,6 +254,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

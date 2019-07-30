@@ -49,7 +49,7 @@ class ConfirmNewPassword extends React.Component {
   verify = () => {
     if (+this.state.enteredCode !== this.state.verificationCode) {
       Alert.alert(
-        "Invalid verification code.\nPlease recheck and try again",
+        "Не правильный код подтверждения.\nПожалуйста, проверьте и попробуйте еще раз",
         null
       );
       
@@ -59,8 +59,6 @@ class ConfirmNewPassword extends React.Component {
         codeFormatIsValid: false
       }));
     } else {
-      
-      console.log("here 1");
       
       this.setState(state => ({
         ...state,
@@ -89,8 +87,8 @@ class ConfirmNewPassword extends React.Component {
               loading: false
             }));
             Alert.alert(
-              "Something was wrong",
-              "Password could not be updated.",
+              "Что то пошло не так",
+              "Пароль не может быть изменен.",
               [
                 {
                   text: "OK",
@@ -103,15 +101,12 @@ class ConfirmNewPassword extends React.Component {
           return;
         }
   
-        console.log("here 3");
-  
-  
         this.setState(state => ({
           ...state,
           ...stateReseter
         }));
         
-        Alert.alert("Success", "You have successfully reset your password!", [
+        Alert.alert("Успех", "Вы успешно изменили пароль!", [
           {
             text: "OK",
             onPress: () => this.props.navigation.push("SplashScreen")
@@ -150,14 +145,14 @@ class ConfirmNewPassword extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
             <Text style={styles.headerText}>
-              Enter 6 digits from email letter:
+              Введите 6 цифр с письма:
             </Text>
             <TextInput
-              placeholder="Enter 6 digits from latter"
+              placeholder="Введите 6 цифр с письма"
               style={styles.field}
               onChangeText={text => this.validateDigits(text)}
               value={this.state.enteredCode}
@@ -176,17 +171,20 @@ class ConfirmNewPassword extends React.Component {
               onPress={() => this.verify()}
               disabled={!this.state.codeFormatIsValid}
             >
-              <Text style={styles.nextColor}>Verify</Text>
+              <Text style={styles.nextColor}>Верифицировать</Text>
             </TouchableOpacity>
+            <Text style={styles.subtitle}>
+              2/2 Введите код подтверждения.
+            </Text>
             <Text style={styles.subtitle}/>
             <View style={styles.signInBlock}>
-              <Text style={styles.question}>Or</Text>
+              <Text style={styles.question}>или</Text>
               <TouchableOpacity
                 onPress={() => this.props.navigation.push("SplashScreen")}
               >
-                <Text style={styles.signInLink}>{` sign in `}</Text>
+                <Text style={styles.signInLink}>{` войти `}</Text>
               </TouchableOpacity>
-              <Text style={styles.question}>with old data</Text>
+              <Text style={styles.question}>со старыми данным</Text>
             </View>
           </View>
         </KeyboardAvoidingView>
@@ -235,6 +233,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

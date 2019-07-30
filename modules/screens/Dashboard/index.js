@@ -17,7 +17,7 @@ import ListItem from "../../components/ListItem/index";
 const EmptyList = () => (
   <View style={styles.emptyList}>
     <Text style={styles.emptyListText}>
-      List is empty.
+      Список пуст.
     </Text>
   </View>
 );
@@ -392,7 +392,7 @@ class Dashboard extends React.Component {
                 source={require("../../../assets/using-guide.png")}
               />
               <Text style={styles.footerGuideText}>
-                Guide
+                Гайд
               </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -404,7 +404,7 @@ class Dashboard extends React.Component {
               source={require("../../../assets/privacy.png")}
             />
             <Text style={styles.footerPrivacyText}>
-              Privacy
+              Политики
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -416,7 +416,7 @@ class Dashboard extends React.Component {
               source={require("../../../assets/social.png")}
             />
             <Text style={styles.footerSocialText}>
-              Community
+              Сообщество
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -428,7 +428,7 @@ class Dashboard extends React.Component {
               source={require("../../../assets/payment.png")}
             />
             <Text style={styles.footerPaymentText}>
-              Payment
+              Комиссии
             </Text>
           </TouchableOpacity>
         </View>

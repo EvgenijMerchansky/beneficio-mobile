@@ -60,8 +60,8 @@ class SignUp extends React.Component {
           }));
           
           Alert.alert(
-            "Incorrect email",
-            "A user with this email address already exists.",
+            "Неверный электроный адрес",
+            "Пользователь с таким адресом уже существует.",
             [
               {
                 text: "OK",
@@ -92,8 +92,8 @@ class SignUp extends React.Component {
                   loading: false
                 }));
                 Alert.alert(
-                  "Something was wrong.",
-                  "Please, try again later.",
+                  "Что то пошло не так.",
+                  "Пожалуйста, попробуйте снова.",
                   [
                     {
                       text: "OK",
@@ -129,16 +129,16 @@ class SignUp extends React.Component {
   onEmailRecheck = () => {
     if (this.state.email.isValid) {
       Alert.alert(
-        "Confirm email address?",
+        "Подтвердить этот электронный адрес?",
         this.state.email.value,
         [
           {
-            text: "Cancel",
+            text: "Отмена",
             onPress: () => {},
             style: "cancel"
           },
           {
-            text: "OK",
+            text: "Подтвердить",
             onPress: () => this.verifyEmailAsync()
           }
         ],
@@ -185,12 +185,12 @@ class SignUp extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text style={styles.headerText}>New account registration</Text>
+            <Text style={styles.headerText}>Регистрация нового аккаунта</Text>
             <TextInput
-              placeholder="Email"
+              placeholder="Электронный адрес"
               style={styles.field}
               onChangeText={text => this.onChangeEmailField(text)}
               value={this.state.email.value}
@@ -206,16 +206,16 @@ class SignUp extends React.Component {
               onPress={() => this.onEmailRecheck()}
               disabled={!this.state.email.isValid}
             >
-              <Text style={styles.nextColor}>Next</Text>
+              <Text style={styles.nextColor}>Дальше</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              1/5 Enter your email for confirm identity.
+              1/5 Введите электронный адрес.
             </Text>
           </View>
           <View style={styles.signInBlock}>
-            <Text style={styles.question}>Have account?</Text>
+            <Text style={styles.question}>Есть аккаунт?</Text>
             <TouchableOpacity onPress={() => this.props.navigation.pop()}>
-              <Text style={styles.signUpLink}>{` Sign in`}</Text>
+              <Text style={styles.signUpLink}>{` Вход`}</Text>
             </TouchableOpacity>
           </View>
         </KeyboardAvoidingView>
@@ -264,6 +264,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10

@@ -6,99 +6,132 @@ import {
   ScrollView,
 } from "react-native";
 
-import { RUS } from "../../constants/guide";
-
 class Guide extends React.Component {
   render() {
     return(
       <ScrollView style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerText}>
-            {RUS.title}
+            Добро пожаловать в beneficio!
           </Text>
         </View>
         <View style={styles.body}>
           <Text style={styles.commonText}>
-            {RUS.subtitle}
+            Вы просто обязаны прочитать краткий экскурс по пользованию данным приложением! Ведь мы старались именно для тебя
           </Text>
           <Text style={styles.commonText}>
-            {RUS.reasons}
+            Ни для кого не секрет, что современное общество - это оплот капитализма. Помимо того, что мы имеем различные способы и пути получения кэша, всё же сталкиваемся с рядом проблем. Для каждого этот список может быть разным, но мы выделим следующие:
           </Text>
-          {
-            RUS.reasonsList.map(item => <Text style={styles.listItem}>{item}</Text>)
-          }
-          <Text style={styles.commonText}>
-            {RUS.factors}
+          <Text style={styles.listItem}>
+            1. Недостаток рабочих мест.
           </Text>
-  
-          <Text style={styles.commonText}>
-            {RUS.overview}
+          <Text style={styles.listItem}>
+            2. Бюрократическое отношение на работе.
           </Text>
-          <Text style={styles.commonText}>
-            {RUS.teamWork}
+          <Text style={styles.listItem}>
+            3. Незнание специфических, востребованных инструментов для заработка.
           </Text>
-          <Text style={styles.commonText}>
-            {RUS.security}
+          <Text style={styles.listItem}>
+            4. Недостаточный трудоспособный возраст...
           </Text>
           <Text style={styles.commonText}>
-            {RUS.howItWorks}
+            При создании данного приложения мы учли все эти факторы.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.nextStep}
-          </Text>
-          {
-            RUS.workList.map(item => <Text style={styles.listItem}>{item}</Text>)
-          }
-          <Text style={styles.commonText}>
-            {RUS.afterWork}
+            Вашему вниманию предоставляется первое приложение, в котором можно зарабатывать стабильно каждый день буквально из любого удобного для Вас места!
           </Text>
           <Text style={styles.commonText}>
-            {RUS.whatNext}
+            Наша команда ежедневно занимается поиском, подбором, покупкой, и тестированием различных интернет-ресурсов по заработку.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.smartPhone}
+            Мы обеспечиваем безопасность в пользовании нашим приложением, а также хранение ваших данных. А также, мы гарантируем 100% заработок, так как подбор и создание уровней соответствует правилу «5/5».
           </Text>
           <Text style={styles.commonText}>
-            {RUS.levelTime}
+            {`Итак, разберёмся как это работает.\nНаши специалисты подбирают наиболее оптимальный ресурс, связываются с его руководством, узнают условия предоставления финансовых услуг.\nДалее следует тестирование ресурса на безопасность проведения операций со стороны пользователя.\nВ итоге, оплачиваем финансовые воздержания за информационные услуги или же за пользование самим ресурсом (если он платный).`}
           </Text>
           <Text style={styles.commonText}>
-            {RUS.afterLevel}
+            Следующий шаг - стадия построения и тестирования:
+          </Text>
+          <Text style={styles.listItem}>
+            1.Анализ работоспособности ресурса.
+          </Text>
+          <Text style={styles.listItem}>
+            2. Составление стратегии построения уровня.
+          </Text>
+          <Text style={styles.listItem}>
+            3. Создание документации по уровню.
+          </Text>
+          <Text style={styles.listItem}>
+            4. Проектирование уровня, декомпозиция его на более мелкие части для комфортного прохождения.
+          </Text>
+          <Text style={styles.listItem}>
+            5. Интегрирование нового level’а в приложение.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.aboutProcess}
+            После вышеперечисленных стадий, полностью протестированный и готовый уровень появляется в приложении с детальной информацией, а именно: логотип и название уровня, его значимость и стоимость(кэш), комиссионные за успешное прохождение, а также оптимально возможное время его закрытия.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.gamePoints}
+            Что дальше?
           </Text>
           <Text style={styles.commonText}>
-            {RUS.knowledgeImprovement}
+            Следовательно, Вы как пользователь проходите уровни один за одним, попутно зарабатывая финансовые средства на ВАШЕМ смартфоне.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.commissions}
+            На прохождение одного уровня, заложено 12 часов, но если Вы не успели его пройти - не беда: уровень не исчезает, продолжаете именно с него.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.paymentProcess}
+            Когда прошли уровень, следующий будет доступен через 12 часов.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.nextLevels}
+            О самом прохождении:
           </Text>
           <Text style={styles.commonText}>
-            {RUS.privacy}
+            В каждом уровне Вам будет представлено пошаговое описание выполнения одного большого задания в сети. Будь то онлайн регистрации на различных ресурсах, будь то сбор и перепродажа крипто-токенов, трафик, работа с биржами, коррекция данных платформы, реферальные операции, и тд.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.community}
-          </Text>
-          {
-            RUS.communityList.map(item => <Text style={styles.listItem}>{item}</Text>)
-          }
-          <Text style={styles.commonText}>
-            {RUS.communityOffer}
+            Помимо заработка, наше приложение помогает людям более детально разобраться в мелких нюансах “мировой паутины”, которая легко уместилась в вашем смартфоне.Вы уже сейчас должны понимать, что именно этот ресурс на сегодня предоставляет невероятные условия для развития любых ваших желаний, целей и тд.
           </Text>
           <Text style={styles.commonText}>
-            {RUS.profile}
+            Как производятся выплаты за прохождение ?
           </Text>
           <Text style={styles.commonText}>
-            {RUS.finish}
+            После установки приложения, за прохождение уровня Вы получите компенсацию. Далее нужно открыть следующий уровень, нажатием кнопки «завершить» на текущем, после нажатия вы перенаправитесь в меню оплаты комиссионных за предоставленный вам уровень (оплата коммисионных доступна с любой банковской карты или счета), коммисионные указаны на уровневой панеле а так же в самой кнопке перехода в меню оплаты. С течением времени, следующий уровень будет открыт для прохождения.
+          </Text>
+          <Text style={styles.commonText}>
+            С каждым последующим уровнем денежное вознаграждение за прохождение будет расти!
+          </Text>
+          <Text style={styles.commonText}>
+            В приложении имеется раздел «Приватности», где детально описаны все права хранения данных пользователя.
+          </Text>
+          <Text style={styles.commonText}>
+            В разделе «Сообщество» расположены ссылки на все актуальные информационные ресурсы нашего приложения:
+          </Text>
+          <Text style={styles.listItem}>
+            1. LinkedIn.
+          </Text>
+          <Text style={styles.listItem}>
+            2. Почта.
+          </Text>
+          <Text style={styles.listItem}>
+            3. Веб-сайт.
+          </Text>
+          <Text style={styles.listItem}>
+            4. Facebook.
+          </Text>
+          <Text style={styles.listItem}>
+            5. Instagram.
+          </Text>
+          <Text style={styles.listItem}>
+            6. Telegram.
+          </Text>
+          <Text style={styles.commonText}>
+            Присоединяйтесь и следите за нашими новостями и обновлениями
+          </Text>
+          <Text style={styles.commonText}>
+            Публичная информация о вашем профиле хранится в разделе «Профайл». Посетите его для более детального изучения.
+          </Text>
+          <Text style={styles.commonText}>
+            Очень рады видеть Вас на нашей платформе! =).
           </Text>
         </View>
       </ScrollView>

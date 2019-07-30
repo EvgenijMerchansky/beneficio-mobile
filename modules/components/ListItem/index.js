@@ -21,13 +21,13 @@ class ListItem extends React.PureComponent {
           <View style={styles.DescriptionBlock}>
             <Text style={styles.DescriptionBlockTitle}>{item.title}</Text>
             <Text style={styles.DescriptionBlockTime}>
-              Lead time: {item.time}
+              Время прохождения: {item.time}
             </Text>
             <Text style={styles.DescriptionBlockEarnings}>
-              Possible earnings: ${item.possibleEarnings}
+              Заработок: ${item.possibleEarnings}
             </Text>
             <Text style={styles.DescriptionBlockCommission}>
-              Commission: ${item.percentPrice}
+              Комиссия: ${item.percentPrice}
             </Text>
           </View>
           <View style={styles.AccessBlock}>
@@ -43,7 +43,7 @@ class ListItem extends React.PureComponent {
             />
             {this.props.index === 0 && !item.isOpen && this.props.activeTab !== "completed" && (
               <Text style={styles.timeToNext}>
-                {`Will open\nin ${this.props.timeToNext}h`}
+                {`Откроется\nчерез ${this.props.timeToNext}ч`}
               </Text>
             )}
           </View>

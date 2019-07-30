@@ -63,18 +63,18 @@ class PhoneScreen extends React.Component {
           behavior="padding"
           enabled
           style={styles.container}
-          keyboardShouldPersistTaps={"handled"}
+          keyboardShouldPersistTaps="handled"
         >
           <View>
-            <Text style={styles.headerText}>Enter your phone:</Text>
+            <Text style={styles.headerText}>Введите номер телефона:</Text>
             <TextInput
-              placeholder="Enter your phone"
+              placeholder="Введите номер телефона"
               style={styles.field}
               onChangeText={text => this.validate(text)}
               value={this.state.phone.value}
               maxLength={50}
               label="phone"
-              keyboardType={"phone-pad"}
+              keyboardType="phone-pad"
             />
             <TouchableOpacity
               style={
@@ -85,10 +85,10 @@ class PhoneScreen extends React.Component {
               onPress={() => this.goNext()}
               disabled={!this.state.phone.isValid}
             >
-              <Text style={styles.nextColor}>Next</Text>
+              <Text style={styles.nextColor}>Дальше</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              {`4/5 Hello, ${params.firstName} ${params.lastName}!\nPlease, add your phone in this format:\n (CCCXXXXXXXXX) - CCC - country code`}
+              {`4/5 Приветствуем, ${params.firstName} ${params.lastName}!\nВведите ваш телефон в таком формате:\n (CCCXXXXXXXXX) - CCC - код страны.`}
             </Text>
           </View>
         </KeyboardAvoidingView>
@@ -137,6 +137,7 @@ const styles = StyleSheet.create({
     color: "#fff"
   },
   headerText: {
+    color: "#bdbcc1",
     fontSize: 18,
     textAlign: "center",
     paddingBottom: 10
