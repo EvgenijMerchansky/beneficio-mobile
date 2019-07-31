@@ -54,7 +54,7 @@ class Social extends React.Component {
             <Text style={styles.socialBodyInstagramText}>
               {`Instagram: `}
               <Text style={{color: '#8dc5ff'}}
-                    onPress={() => Linking.openURL('https://www.instagram.com')}>
+                    onPress={() => Linking.openURL('https://instagram.com/beneficioinc?igshid=1k2gwqx8p6xw7')}>
                 beneficio.inc
               </Text>
             </Text>
@@ -63,7 +63,7 @@ class Social extends React.Component {
             <Text style={styles.socialBodyTelegramText}>
               {`Telegram: `}
               <Text style={{color: '#8dc5ff'}}
-                    onPress={() => Linking.openURL('http://t.me/@emerchansky')}>
+                    onPress={() => Linking.openURL('https://t.me/beneficioinc')}>
                 beneficio-community
               </Text>
             </Text>
@@ -72,7 +72,7 @@ class Social extends React.Component {
             <Text style={styles.socialBodyFacebookText}>
               {`Facebook: `}
               <Text style={{color: '#8dc5ff'}}
-                    onPress={() => Linking.openURL('https://www.facebook.com')}>
+                    onPress={() => Linking.openURL('https://www.facebook.com/beneficioinc/?ref=aymt_homepage_panel&eid=ARB225N89pJKx5b5HYLCumQZf26FYErjKYnJTzgjdeR2ZWFtTFxYRKQSHA7mgn8a5PMaXxCnjZ0en4vp')}>
                 beneficio-community-fb
               </Text>
             </Text>

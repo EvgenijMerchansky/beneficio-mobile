@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/screens/Rules/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/components/ModalWrapper/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modules/screens/Guide/index.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/navigation.js" afterPath="$PROJECT_DIR$/modules/navigation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" afterPath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" afterPath="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/PasswordScreen/index.js" afterPath="$PROJECT_DIR$/modules/screens/PasswordScreen/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" afterPath="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/PhoneScreen/index.js" afterPath="$PROJECT_DIR$/modules/screens/PhoneScreen/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Social/index.js" afterPath="$PROJECT_DIR$/modules/screens/Social/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -110,9 +101,21 @@
         </entry>
       </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/screens/Social/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+              <folding>
+                <marker date="1564566842000" expanded="false" signature="556:575" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/screens/ForgotPassword/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
+            <state relative-caret-position="558">
               <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
               <folding />
             </state>
@@ -125,18 +128,6 @@
             <state relative-caret-position="-594">
               <caret line="32" column="75" lean-forward="false" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/screens/Profile/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -235,7 +226,6 @@
         <option value="$PROJECT_DIR$/modules/components/ListItem/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/Payment/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/Profile/index.js" />
-        <option value="$PROJECT_DIR$/modules/screens/Social/index.js" />
         <option value="$PROJECT_DIR$/modules/constants/privacy.js" />
         <option value="$PROJECT_DIR$/modules/screens/Level/index.js" />
         <option value="$PROJECT_DIR$/modules/navigation.js" />
@@ -245,6 +235,7 @@
         <option value="$PROJECT_DIR$/modules/screens/PhoneScreen/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/PasswordScreen/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" />
+        <option value="$PROJECT_DIR$/modules/screens/Social/index.js" />
       </list>
     </option>
   </component>
@@ -326,6 +317,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="screens" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beneficio-mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="beneficio-mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="screens" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Social" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -605,7 +618,7 @@
       <workItem from="1564317812968" duration="3583000" />
       <workItem from="1564388835194" duration="2154000" />
       <workItem from="1564391830975" duration="24707000" />
-      <workItem from="1564493513848" duration="11447000" />
+      <workItem from="1564493513848" duration="12711000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/EvgenijMerchansky/beneficio-mobile&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
       <created>1564411779185</created>
@@ -618,7 +631,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303000000" />
+    <option name="totallyTimeSpent" value="304264000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="45" width="1440" height="810" extended-state="0" />
@@ -816,17 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/screens/Social/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="83" column="44" lean-forward="false" selection-start-line="83" selection-start-column="44" selection-end-line="83" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-            <marker date="1564488786000" expanded="false" signature="556:575" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/constants/privacy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -953,9 +955,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/screens/ForgotPassword/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
+        <state relative-caret-position="558">
           <caret line="46" column="6" lean-forward="true" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/screens/Social/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+          <folding>
+            <marker date="1564566842000" expanded="false" signature="556:575" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
