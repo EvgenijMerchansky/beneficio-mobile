@@ -27,7 +27,7 @@ class Social extends React.Component {
             <Text style={styles.socialBodyWebsiteText}>
               {`Веб-сайт: `}
               <Text style={{color: '#8dc5ff'}}
-                    onPress={() => Linking.openURL('http://google.com')}>
+                    onPress={() => Linking.openURL('http://merchansky-001-site1.dtempurl.com/')}>
                 beneficio.com
               </Text>
             </Text>

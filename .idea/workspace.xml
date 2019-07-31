@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" afterPath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Social/index.js" afterPath="$PROJECT_DIR$/modules/screens/Social/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -33,8 +35,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="81" column="104" lean-forward="false" selection-start-line="81" selection-start-column="104" selection-end-line="81" selection-end-column="104" />
+            <state relative-caret-position="193">
+              <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -103,10 +105,10 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/screens/Social/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+            <state relative-caret-position="203">
+              <caret line="26" column="55" lean-forward="true" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
               <folding>
-                <marker date="1564566842000" expanded="false" signature="556:575" ph="..." />
+                <marker date="1564585746000" expanded="false" signature="556:575" ph="..." />
               </folding>
             </state>
           </provider>
@@ -168,11 +170,11 @@
       <find>alert</find>
       <find>Что</find>
       <find>aler</find>
-      <find>Alert.alert</find>
       <find>password</find>
       <find>Guide</find>
       <find>email</find>
       <find>formIsValid</find>
+      <find>Alert.alert</find>
     </findStrings>
     <replaceStrings>
       <replace>View</replace>
@@ -230,11 +232,11 @@
         <option value="$PROJECT_DIR$/modules/screens/Level/index.js" />
         <option value="$PROJECT_DIR$/modules/navigation.js" />
         <option value="$PROJECT_DIR$/modules/screens/Rules/index.js" />
-        <option value="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/PhoneScreen/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/PasswordScreen/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/ForgotPassword/index.js" />
+        <option value="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
         <option value="$PROJECT_DIR$/modules/screens/Social/index.js" />
       </list>
     </option>
@@ -618,7 +620,7 @@
       <workItem from="1564317812968" duration="3583000" />
       <workItem from="1564388835194" duration="2154000" />
       <workItem from="1564391830975" duration="24707000" />
-      <workItem from="1564493513848" duration="12711000" />
+      <workItem from="1564493513848" duration="14162000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/EvgenijMerchansky/beneficio-mobile&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
       <created>1564411779185</created>
@@ -631,7 +633,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304264000" />
+    <option name="totallyTimeSpent" value="305715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="45" width="1440" height="810" extended-state="0" />
@@ -858,7 +860,7 @@
         <state relative-caret-position="383">
           <caret line="85" column="29" lean-forward="false" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="29" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -901,16 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="61" column="10" lean-forward="false" selection-start-line="61" selection-start-column="10" selection-end-line="70" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="81" column="104" lean-forward="false" selection-start-line="81" selection-start-column="104" selection-end-line="81" selection-end-column="104" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -961,12 +953,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="62" column="13" lean-forward="true" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/screens/Social/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="63" column="28" lean-forward="true" selection-start-line="63" selection-start-column="28" selection-end-line="63" selection-end-column="28" />
+        <state relative-caret-position="203">
+          <caret line="26" column="55" lean-forward="true" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
           <folding>
-            <marker date="1564566842000" expanded="false" signature="556:575" ph="..." />
+            <marker date="1564585746000" expanded="false" signature="556:575" ph="..." />
           </folding>
         </state>
       </provider>
