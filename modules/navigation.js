@@ -12,11 +12,11 @@ import PasswordScreen from "./screens/PasswordScreen";
 import ConfirmNewPassword from "./screens/ConfirmNewPassword";
 import Profile from "./screens/Profile";
 import Level from "./screens/Level";
-import Guide from "./screens/Guide/index";
 import PrivacyPolicy from "./screens/PrivacyPolicy/index";
 import Social from "./screens/Social/index";
 import Payment from "./screens/Payment/index";
 import PaymentRules from "./screens/PaymentRules/index";
+import Rules from "./screens/Rules/index";
 
 const Navigator = createStackNavigator({
   SplashScreen: {
@@ -178,23 +178,6 @@ const Navigator = createStackNavigator({
       headerBackTitle: "Назад"
     }
   },
-  Guide: {
-    screen: Guide,
-    navigationOptions: {
-      title: "Гайд",
-      headerStyle: {
-        backgroundColor: "#42a4ff",
-        borderBottomWidth: 0
-      },
-      headerTitle: "Гайд",
-      headerTitleStyle: {
-        fontWeight: "light",
-        color: "#fff"
-      },
-      headerTintColor: "#fff",
-      headerBackTitle: "Назад"
-    }
-  },
   PrivacyPolicy: {
     screen: PrivacyPolicy,
     navigationOptions: {
@@ -247,6 +230,22 @@ const Navigator = createStackNavigator({
     screen: PaymentRules,
     navigationOptions: {
       title: "Комиссии",
+      headerStyle: {
+        backgroundColor: "#42a4ff",
+        borderBottomWidth: 0
+      },
+      headerTitleStyle: {
+        fontWeight: "light",
+        color: "#fff"
+      },
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
+    }
+  },
+  Rules: {
+    screen: Rules,
+    navigationOptions: {
+      title: "Гайд",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0

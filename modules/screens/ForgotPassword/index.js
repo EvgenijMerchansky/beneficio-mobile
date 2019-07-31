@@ -24,6 +24,10 @@ const stateReseter = {
     value: undefined,
     isValid: false
   },
+  confirmPassword: {
+    value: undefined,
+    isValid: false
+  },
   loading: false
 };
 
@@ -34,6 +38,10 @@ class ForgotPassword extends React.Component {
       isValid: false
     },
     password: {
+      value: undefined,
+      isValid: false
+    },
+    confirmPassword: {
       value: undefined,
       isValid: false
     },
@@ -118,6 +126,26 @@ class ForgotPassword extends React.Component {
     }
   };
   
+  comparePasswords = (value) => {
+    if (value === "" || value === null || value !== this.state.password.value) {
+      this.setState(state => ({
+        ...state,
+        confirmPassword: {
+          value,
+          isValid: false
+        }
+      }));
+    } else {
+      this.setState(state => ({
+        ...state,
+        confirmPassword: {
+          value,
+          isValid: true
+        }
+      }));
+    }
+  };
+  
   validateEmail = email => {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
@@ -143,8 +171,12 @@ class ForgotPassword extends React.Component {
     }
   };
   
+  passwordIsMatch = (value) => {
+    return /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test(value);
+  };
+  
   onChangePasswordField = value => {
-    if (value === "" || value === null || value.length < 8) {
+    if (value === "" || value === null || value.length < 6 || !this.passwordIsMatch(value) || value.length > 20) {
       this.setState(state => ({
         ...state,
         password: {
@@ -164,7 +196,7 @@ class ForgotPassword extends React.Component {
   };
   
   render() {
-    let formIsValid = this.state.email.isValid && this.state.password.isValid;
+    let formIsValid = this.state.email.isValid && this.state.confirmPassword.isValid;
     
     if (this.state.loading) {
       return <ActivityIndicator />;
@@ -193,8 +225,17 @@ class ForgotPassword extends React.Component {
               style={styles.field}
               onChangeText={text => this.onChangePasswordField(text)}
               value={this.state.password.value}
-              maxLength={50}
+              maxLength={20}
               label="password"
+              secureTextEntry={true}
+            />
+            <TextInput
+              placeholder="Повторите пароль"
+              style={styles.field}
+              onChangeText={text => this.comparePasswords(text)}
+              value={this.state.confirmPassword.value}
+              maxLength={20}
+              label="confirm-password"
               secureTextEntry={true}
             />
             <TouchableOpacity
@@ -205,7 +246,10 @@ class ForgotPassword extends React.Component {
               <Text style={styles.nextColor}>Дальше</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
-              1/2 Введите электронный адрес.
+              1/2 Введите электронный адрес и новый пароль.
+            </Text>
+            <Text style={styles.subtitle}>
+              {`Пароль должен:\n 1. Быть больше 6 символов и меньше 20.\n2. Содержать заглавные и строчные символы.\n3. Содержать специальные символы (!@#$%^&*).`}
             </Text>
           </View>
         </KeyboardAvoidingView>

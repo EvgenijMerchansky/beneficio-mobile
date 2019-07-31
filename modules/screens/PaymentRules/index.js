@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     fontWeight: "light",
   },
   body: {
-    
+    marginBottom: 40,
   },
   bodyCommonText: {
     color: "#a09fa4",

@@ -15,9 +15,25 @@ import ActivityIndicator from "../../components/ActivityIndicatorWrapper";
 
 import { SIGN_UP } from "../../constants/apis";
 
+const stateReseter = {
+  password: {
+    value: undefined,
+    isValid: false
+  },
+  confirmPassword: {
+    value: undefined,
+    isValid: false
+  },
+  loading: false
+};
+
 class PasswordScreen extends React.Component {
   state = {
     password: {
+      value: undefined,
+      isValid: false
+    },
+    confirmPassword: {
       value: undefined,
       isValid: false
     },
@@ -71,6 +87,10 @@ class PasswordScreen extends React.Component {
             value: undefined,
             isValid: false
           },
+          confirmPassword: {
+            value: undefined,
+            isValid: false
+          },
           loading: false
         }));
         
@@ -84,16 +104,37 @@ class PasswordScreen extends React.Component {
       .catch(() => {
         this.setState(state => ({
           ...state,
-          email: {
-            value: undefined,
-            isValid: false
-          }
+          ...stateReseter
         }));
       });
   };
   
+  passwordIsMatch = (value) => {
+    return /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test(value);
+  };
+  
+  comparePasswords = (value) => {
+    if (value === "" || value === null || value !== this.state.password.value) {
+      this.setState(state => ({
+        ...state,
+        confirmPassword: {
+          value,
+          isValid: false
+        }
+      }));
+    } else {
+      this.setState(state => ({
+        ...state,
+        confirmPassword: {
+          value,
+          isValid: true
+        }
+      }));
+    }
+  };
+  
   validate = value => {
-    if (value === "" || value === null || value.length < 8) {
+    if (value === "" || value === null || value.length < 6 || !this.passwordIsMatch(value) || value.length > 20) {
       this.setState(state => ({
         ...state,
         password: {
@@ -134,23 +175,36 @@ class PasswordScreen extends React.Component {
               style={styles.field}
               onChangeText={text => this.validate(text)}
               value={this.state.password.value}
-              maxLength={50}
+              maxLength={20}
               label="password"
+              secureTextEntry={true}
+            />
+            <TextInput
+              placeholder="Повторите пароль"
+              style={styles.field}
+              onChangeText={text => this.comparePasswords(text)}
+              value={this.state.confirmPassword.value}
+              maxLength={20}
+              label="confirm-password"
               secureTextEntry={true}
             />
             <TouchableOpacity
               style={
-                this.state.password.isValid
+                this.state.password.isValid &&
+                this.state.confirmPassword.isValid
                   ? styles.nextEnable
                   : styles.nextDisable
               }
               onPress={() => this.signUpAsync()}
-              disabled={!this.state.password.isValid}
+              disabled={!this.state.confirmPassword.isValid}
             >
               <Text style={styles.nextColor}>Завершить</Text>
             </TouchableOpacity>
             <Text style={styles.subtitle}>
               5/5 Введите Ваш пароль.
+            </Text>
+            <Text style={styles.subtitle}>
+              {`Пароль должен:\n 1. Быть больше 6 символов и меньше 20.\n2. Содержать заглавные и строчные символы.\n3. Содержать специальные символы (!@#$%^&*).`}
             </Text>
           </View>
         </KeyboardAvoidingView>

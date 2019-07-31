@@ -30,7 +30,7 @@ class PhoneScreen extends React.Component {
   };
   
   isValidNumber = phone => {
-    const phoneRegEx = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+    const phoneRegEx = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
     
     return phone.match(phoneRegEx);
   };

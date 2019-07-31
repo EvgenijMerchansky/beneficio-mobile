@@ -10,7 +10,6 @@ import {
 } from "react-native";
 import { GET_LEVELS_LIST, SIGN_OUT, GET_USER, REFRESH_TOKEN } from "../../constants/apis";
 
-import ModalWrapper from "../../components/ModalWrapper/index";
 import HeaderTabs from "../../components/HeaderTabs/index";
 import ListItem from "../../components/ListItem/index";
 
@@ -72,7 +71,26 @@ class Dashboard extends React.Component {
     
     this.getListsAsync(userId, accessToken, refreshToken, expires);
     this.getUserProfile(userId, accessToken);
+    this.showOverview(overview);
   }
+  
+  showOverview = (overview) => {
+  
+    if (overview) {
+      Alert.alert(
+        "Добро пожаловать в beneficio!",
+        `Прежде всего, предлагаю тебе прочитать раздел "Гайд" для разьяснения в пользовании приложением.`,
+        [
+          {
+            text: "Понял, принял!",
+            onPress: () => this.props.navigation.push("Rules")
+          }
+        ]
+      );
+    }
+    
+    return false;
+  };
   
   refreshToken = (refreshToken, userId) => {
     const refreshTokenBody = {
@@ -100,13 +118,14 @@ class Dashboard extends React.Component {
           }));
           
           Alert.alert(
-            "Something was wrong",
-            "Please, try to re-login."[
+            "Что то пошло не так",
+            "Пожалуйста повторите снова.",
+            [
               {
                 text: "OK",
                 onPress: () => this.props.navigation.push("SplashScreen")
               }
-              ]
+            ]
           );
           
           return false;
@@ -326,10 +345,6 @@ class Dashboard extends React.Component {
   
     return (
       <View style={{ flex: 1 }}>
-        <ModalWrapper
-          isOpen={this.state.overview}
-          onModalClose={this.closeModal}
-        />
         <View>
           <View style={styles.header}>
             <TouchableOpacity
@@ -385,7 +400,7 @@ class Dashboard extends React.Component {
         <View style={styles.footer}>
           <TouchableOpacity
             style={styles.footerGuide}
-            onPress={() => this.props.navigation.push("Guide")}
+            onPress={() => this.props.navigation.push("Rules")}
           >
               <Image
                 style={styles.imageLinkDimensions}
