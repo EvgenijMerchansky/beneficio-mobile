@@ -162,10 +162,11 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "#42a4ff",
-    fontSize: 16,
+    fontSize: 22,
     fontFamily: "RobotoLight",
     textAlign: "left",
     fontWeight: "light",
+    paddingBottom: 20
   },
   body: {
     marginTop: 10,

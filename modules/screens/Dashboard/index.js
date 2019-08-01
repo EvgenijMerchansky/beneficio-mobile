@@ -206,6 +206,7 @@ class Dashboard extends React.Component {
   };
   
   getUserProfile = (userId, accessToken) => {
+  
     this.setState(state => ({ ...state, loading: true }));
     
     const settings = {
@@ -221,7 +222,7 @@ class Dashboard extends React.Component {
     
     fetch(GET_USER, settings)
       .then(response => {
-        
+  
         if (response.status > 205 && response.status < 500) {
           this.refreshToken(this.state.refreshToken, this.state.userId);
           
@@ -253,13 +254,13 @@ class Dashboard extends React.Component {
   };
   
   signOut = () => {
-    Alert.alert("Do you really want exit?", "", [
+    Alert.alert("Вы действительно хотите выйти?", "", [
       {
-        text: "Logout",
+        text: "Выход",
         onPress: () => this.signOutRequest()
       },
       {
-        text: "Cancel",
+        text: "Отмена",
         onPress: () => {}
       }
     ]);
@@ -328,10 +329,6 @@ class Dashboard extends React.Component {
     })
   };
   
-  closeModal = () => {
-    this.setState(state => ({ ...state, overview: false }));
-  };
-  
   render() {
     let {
       userId,
@@ -392,8 +389,11 @@ class Dashboard extends React.Component {
             )}
             keyExtractor={item => item.id}
             refreshing={loading}
-            onRefresh={() =>
-              this.getListsAsync(userId, accessToken, refreshToken, expires)
+            onRefresh={
+              () => {
+                this.getUserProfile(userId, accessToken);
+                this.getListsAsync(userId, accessToken, refreshToken, expires);
+              }
             }
           />
         </View>

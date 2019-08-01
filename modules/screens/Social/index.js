@@ -110,16 +110,20 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     textAlign: "center",
     padding: 20,
-    width: "100%"
+    width: "100%",
   },
   socialHeaderText: {
-    color: "#9d9ca1",
-    fontSize: 24,
+    color: "#42a4ff",
+    fontSize: 22,
+    fontFamily: "RobotoLight",
+    textAlign: "left",
+    fontWeight: "light",
+    paddingBottom: 20
   },
   headerSubtext: {
     textAlign: "left",
     fontSize: 12,
-    color: "#8dc5ff"
+    color: "#9d9ca1",
   },
   socialBody: {
     backgroundColor: "#f9f8fd",

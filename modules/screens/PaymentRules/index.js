@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   },
   body: {
     marginBottom: 40,
+    fontSize: 12
   },
   bodyCommonText: {
     color: "#a09fa4",

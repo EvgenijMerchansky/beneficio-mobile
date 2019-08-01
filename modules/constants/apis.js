@@ -9,5 +9,5 @@ export const GET_LEVELS_LIST = 'https://lodiumwebapi20190725104425.azurewebsites
 export const REFRESH_TOKEN = "https://lodiumwebapi20190725104425.azurewebsites.net/api/users/token/refresh";
 export const GET_USER = "https://lodiumwebapi20190725104425.azurewebsites.net/api/users";
 export const GET_LEVEL = "https://lodiumwebapi20190725104425.azurewebsites.net/api/levels";
-export const COMPLETE_LEVEL = "https://lodiumwebapi20190725104425.azurewebsites.net/api/levels/complete";
 export const GET_PAYMENTS_DATA = "https://lodiumwebapi20190725104425.azurewebsites.net/api/payments/data";
+export const UPDATE_USER_AVATAR = "https://lodiumwebapi20190725104425.azurewebsites.net/api/users/avatar/upload";

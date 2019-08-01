@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 7
   },
   DescriptionBlockTitle: {
-    marginBottom: 10,
+    marginBottom: 5,
     color: "#42a4ff",
     fontSize: 16
   },
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
   },
   AccessBlock: {
     height: "100%",
-    flex: 0.3,
+    flex: 0.4,
     flexDirection: "column",
     alignContent: "center",
     alignItems: "center",

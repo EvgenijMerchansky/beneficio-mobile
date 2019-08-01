@@ -1,26 +1,126 @@
 import React from "react";
 import {
   StyleSheet,
+  TouchableOpacity,
   Text,
   View,
   ScrollView,
-  Image
+  ActivityIndicator,
+  Image,
+  Alert
 } from "react-native";
 
-const userAvatar = "http://news.mspravka.info/wp-content/uploads/2019/05/00-2.jpg";
+import { UPDATE_USER_AVATAR } from "../../constants/apis";
+
+import { ImagePicker, Permissions, Constants } from 'expo';
 
 class Profile extends React.Component {
-  render() {
+  
+  state = {
+    image: null,
+    loading: false,
+  };
+  
+  getPermissionAsync = async () => {
+    if (Constants.platform.ios) {
+      const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+      if (status !== 'granted') {
+        
+        Alert.alert('Подтверждите что даете согласие на доступ к камере и матриалам.');
+      }
+    }
+  };
+  
+  componentDidMount() {
+    let { user } = this.props.navigation.state.params;
+    
+    this.setState(state => ({ ...state, image: user.avatarUrl }))
+  }
+  
+  updateUserAvatar = (uri) => {
+    this.setState(state => ({ ...state, loading: true }));
+  
     let { user } = this.props.navigation.state.params;
   
+    fetch(UPDATE_USER_AVATAR, {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        userId: user.id
+      },
+      body: JSON.stringify({ imageUrl: uri })
+    }).then(response => {
+      if (response.status > 205 && response.status < 500) {
+    
+        Alert.alert(
+          "Что то пошло не так",
+          "Пожалуйста, попробуйте снова.",
+          [
+            {
+              text: "OK",
+              onPress: () => {
+              }
+            }
+          ]
+        );
+    
+        response.json().then(() => {
+          this.setState(state => ({
+            ...state,
+            loading: false
+          }));
+        });
+      } else {
+        response.json().then(data => {
+          this.setState(state => ({
+            ...state,
+            image: data.imageUrl,
+            loading: false
+          }));
+        });
+      }
+    })
+  };
+  
+  _pickImage = async () => {
+    this.getPermissionAsync();
+    
+    let result = await ImagePicker.launchImageLibraryAsync({
+      base64: true,
+      allowsEditing: true,
+      aspect: [4, 3],
+    });
+    
+    if (!result.cancelled) {
+  
+      let uri = `data:image/png;base64,${result.base64}`;
+  
+      this.updateUserAvatar(uri);
+    }
+  };
+  
+  render() {
+    let { user } = this.props.navigation.state.params;
+
     return(
       <ScrollView style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerImage}>
-            <Image
-              style={styles.headerImageDimensions}
-              source={{url: userAvatar}}
-            />
+            <TouchableOpacity onPress={this._pickImage}>
+              {this.state.loading ?
+                <View style={[styles.loadContainer, styles.horizontal]}>
+                  <ActivityIndicator
+                    size="small"
+                    color="#000"
+                  />
+                </View> :
+                <Image
+                  style={styles.headerImageDimensions}
+                  source={this.state.image === null ? require("../../../assets/default.png") : {url: this.state.image}}
+                />
+              }
+            </TouchableOpacity>
           </View>
           <View style={styles.headerName}>
             <Text style={styles.headerNameText}>{user.firstName} {user.lastName}</Text>
@@ -49,27 +149,17 @@ class Profile extends React.Component {
           </View>
           <View style={styles.bodyTitleBlock}>
             <Text style={styles.bodyTitleBlockText}>
-              Сообщества
-            </Text>
-          </View>
-          <View style={styles.bodyTelegram}>
-            <Text style={styles.bodyTelegramText}>
-              Telegram: {user.telegramNickname ? user.telegramNickname : "-"}
-            </Text>
-          </View>
-          <View style={styles.bodyInstagram}>
-            <Text style={styles.bodyInstagramText}>
-              Instagram: {user.whatsUpNickname ? user.whatsUpNickname : "-"}
-            </Text>
-          </View>
-          <View style={styles.bodyTitleBlock}>
-            <Text style={styles.bodyTitleBlockText}>
               Прогресс прохождений
             </Text>
           </View>
           <View style={styles.bodyCompletedLevels}>
             <Text style={styles.bodyCompletedLevelsText}>
               Пройденные уровни: {user.completedLevels.length}
+            </Text>
+          </View>
+          <View style={styles.bodyCompletedLevels}>
+            <Text style={styles.bodyCompletedLevelsText}>
+              Внесенные комиссии: ${user.totalCommissions}
             </Text>
           </View>
         </View>
@@ -179,6 +269,26 @@ const styles = StyleSheet.create({
   },
   bodyCompletedLevelsText: {
     color: "#bdbcc1"
+  },
+  horizontal: {
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    backgroundColor: "#f9f8fd",
+    borderWidth: 3,
+    borderStyle: "solid",
+    borderColor: "#8dc5ff"
+  },
+  loadContainer: {
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    backgroundColor: "#f9f8fd",
+    borderWidth: 3,
+    borderStyle: "solid",
+    borderColor: "#8dc5ff"
   }
 });
 
