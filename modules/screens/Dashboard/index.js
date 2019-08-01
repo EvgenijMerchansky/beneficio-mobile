@@ -68,9 +68,9 @@ class Dashboard extends React.Component {
     } = this.props.navigation.state.params;
   
     this.setState(state => ({ ...state, overview: overview }));
-    
-    this.getListsAsync(userId, accessToken, refreshToken, expires);
+
     this.getUserProfile(userId, accessToken);
+    this.getListsAsync(userId, accessToken, refreshToken, expires);
     this.showOverview(overview);
   }
   
@@ -312,7 +312,9 @@ class Dashboard extends React.Component {
   };
   
   pushToProfile = () => {
-    this.props.navigation.push("ProfileScreen", { user: this.state.user })
+    this.props.navigation.push("ProfileScreen", {
+      user: this.state.user,
+      getUpdatedUseProfile: () => this.getUserProfile(this.state.userId, this.state.accessToken) })
   };
   
   changeTab = current => {
@@ -389,12 +391,7 @@ class Dashboard extends React.Component {
             )}
             keyExtractor={item => item.id}
             refreshing={loading}
-            onRefresh={
-              () => {
-                this.getUserProfile(userId, accessToken);
-                this.getListsAsync(userId, accessToken, refreshToken, expires);
-              }
-            }
+            onRefresh={() => this.getListsAsync(userId, accessToken, refreshToken, expires)}
           />
         </View>
         <View style={styles.footer}>

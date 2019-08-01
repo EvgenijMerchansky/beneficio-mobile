@@ -40,7 +40,7 @@ class Profile extends React.Component {
   updateUserAvatar = (uri) => {
     this.setState(state => ({ ...state, loading: true }));
   
-    let { user } = this.props.navigation.state.params;
+    let { user, getUpdatedUseProfile } = this.props.navigation.state.params;
   
     fetch(UPDATE_USER_AVATAR, {
       method: "post",
@@ -80,6 +80,8 @@ class Profile extends React.Component {
           }));
         });
       }
+  
+      getUpdatedUseProfile();
     })
   };
   
