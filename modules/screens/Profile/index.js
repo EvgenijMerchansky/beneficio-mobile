@@ -79,10 +79,15 @@ class Profile extends React.Component {
             loading: false
           }));
         });
-      }
   
-      getUpdatedUseProfile();
-    })
+        getUpdatedUseProfile();
+  
+        this.setState(state => ({
+          ...state,
+          loading: false
+        }));
+      }
+    });
   };
   
   _pickImage = async () => {
