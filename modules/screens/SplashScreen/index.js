@@ -293,7 +293,8 @@ const styles = StyleSheet.create({
     width: 300,
     borderColor: "#e8e7ec",
     borderWidth: 1,
-    padding: 10
+    padding: 10,
+    color: "#9d9ca1"
   },
   signInEnable: {
     width: 300,

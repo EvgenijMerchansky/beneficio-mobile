@@ -17,6 +17,7 @@ import Social from "./screens/Social/index";
 import Payment from "./screens/Payment/index";
 import PaymentRules from "./screens/PaymentRules/index";
 import Rules from "./screens/Rules/index";
+import SupportScreen from "./screens/SupportScreen/index";
 
 const Navigator = createStackNavigator({
   SplashScreen: {
@@ -246,6 +247,22 @@ const Navigator = createStackNavigator({
     screen: Rules,
     navigationOptions: {
       title: "Гайд",
+      headerStyle: {
+        backgroundColor: "#42a4ff",
+        borderBottomWidth: 0
+      },
+      headerTitleStyle: {
+        fontWeight: "light",
+        color: "#fff"
+      },
+      headerTintColor: "#fff",
+      headerBackTitle: "Назад"
+    }
+  },
+  SupportScreen: {
+    screen: SupportScreen,
+    navigationOptions: {
+      title: "Помощь",
       headerStyle: {
         backgroundColor: "#42a4ff",
         borderBottomWidth: 0

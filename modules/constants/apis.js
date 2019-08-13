@@ -11,3 +11,4 @@ export const GET_USER = "https://lodiumwebapi20190725104425.azurewebsites.net/ap
 export const GET_LEVEL = "https://lodiumwebapi20190725104425.azurewebsites.net/api/levels";
 export const GET_PAYMENTS_DATA = "https://lodiumwebapi20190725104425.azurewebsites.net/api/payments/data";
 export const UPDATE_USER_AVATAR = "https://lodiumwebapi20190725104425.azurewebsites.net/api/users/avatar/upload";
+export const SEND_SUPPORT_MESSAGE = "https://lodiumwebapi20190725104425.azurewebsites.net/api/levels/help";

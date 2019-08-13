@@ -299,20 +299,33 @@ class Level extends React.Component {
           <Text style={styles.finishDescriptionText}>
             {`*Переход в меню оплаты комиссионных*`}
           </Text>
-          <TouchableOpacity
-            style={styles.completeButton}
-            onPress={() => this.props.navigation.push("Payment", {
-              userId: userId,
-              accessToken: accessToken,
-              refreshToken: refreshToken,
-              refreshTokenHandler: refreshTokenHandler,
-              levelId: levelId,
-            })}
-          >
-            <Text style={styles.completeButtonText}>
-              Открыть следующий уровень (${this.state.level.percentPrice})
-            </Text>
-          </TouchableOpacity>
+          <View style={styles.buttonsAligner}>
+            <TouchableOpacity
+              style={styles.completeButton}
+              onPress={() => this.props.navigation.push("Payment", {
+                userId: userId,
+                accessToken: accessToken,
+                refreshToken: refreshToken,
+                refreshTokenHandler: refreshTokenHandler,
+                levelId: levelId,
+              })}
+            >
+              <Text style={styles.completeButtonText}>
+                Открыть следующий уровень (${this.state.level.percentPrice})
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.helpButton}
+              onPress={() => this.props.navigation.push("SupportScreen", {
+                userId: userId,
+                levelId: levelId,
+              })}
+            >
+              <Text style={styles.helpButtonText}>
+                Помощь
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     ]
@@ -421,13 +434,15 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingTop: 10,
     paddingBottom: 25,
+    paddingRight: 20,
+    paddingLeft: 20,
     backgroundColor: "#f9f8fd",
     alignItems: "center",
     borderTopColor: "#edecf1",
     borderTopWidth: 1
   },
   completeButton: {
-    width: 300,
+    width: "75%",
     color: "#fff",
     height: 40,
     borderRadius: 4,
@@ -439,6 +454,22 @@ const styles = StyleSheet.create({
   },
   completeButtonText: {
     color: "#fff",
+    fontSize: 12
+  },
+  helpButton: {
+    width: "22%",
+    color: "#fff",
+    height: 40,
+    borderRadius: 4,
+    backgroundColor: "#ed4340",
+    alignItems: "center",
+    padding: 10,
+    flexDirection: "column",
+    justifyContent: "center"
+  },
+  helpButtonText: {
+    color: "#fff",
+    fontSize: 12
   },
   closeModalButton: {
     backgroundColor: "transparent",
@@ -451,6 +482,13 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     color: "#f9f8fd"
+  },
+  buttonsAligner: {
+    width: "93%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignContent: "space-between"
   },
   horizontal: {
     flexDirection: "row",

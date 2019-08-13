@@ -11,15 +11,14 @@ class Social extends React.Component {
   render() {
     return(
       <View style={styles.container}>
-        <View style={styles.socialHeader}>
+        <ScrollView style={styles.socialBody}>
           <Text style={styles.socialHeaderText}>
             Наше сообщество
           </Text>
           <Text style={styles.headerSubtext}>
             {`Присоединяйся к нашему сообществу\nчто бы быть в курсе всех последних новостей`}
           </Text>
-        </View>
-        <ScrollView style={styles.socialBody}>
+          
           <Text style={styles.socialTitle}>
             Ссылки
           </Text>
