@@ -18,7 +18,6 @@ class Social extends React.Component {
           <Text style={styles.headerSubtext}>
             {`Присоединяйся к нашему сообществу\nчто бы быть в курсе всех последних новостей`}
           </Text>
-          
           <Text style={styles.socialTitle}>
             Ссылки
           </Text>
@@ -123,6 +122,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontSize: 12,
     color: "#9d9ca1",
+    marginBottom: 10
   },
   socialBody: {
     backgroundColor: "#f9f8fd",
