@@ -184,14 +184,14 @@ const Navigator = createStackNavigator({
     navigationOptions: {
       title: "Конфиденциальность",
       headerStyle: {
-        backgroundColor: "#f9f8fd",
+        backgroundColor: "#42a4ff",
         borderBottomWidth: 0,
       },
       headerTitleStyle: {
         fontWeight: "light",
-        color: "#000",
+        color: "#fff"
       },
-      headerTintColor: "#000",
+      headerTintColor: "#fff",
       headerBackTitle: "Назад"
     }
   },

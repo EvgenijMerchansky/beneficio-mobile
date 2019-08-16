@@ -175,13 +175,13 @@ const styles = StyleSheet.create({
   bodyText: {
     textAlign: "left",
     fontSize: 12,
-    color: "#bdbcc1",
+    color: "#a09fa4",
     paddingBottom: 10,
   },
   listItemText: {
     textAlign: "left",
     fontSize: 12,
-    color: "#bdbcc1",
+    color: "#a09fa4",
   },
   listWrapper: {
     flexDirection: "column",

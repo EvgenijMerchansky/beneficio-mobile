@@ -27,8 +27,8 @@ class Payment extends React.Component {
   getFormData = () => {
     this.setState(state => ({ ...state, loading: true }));
   
-    let { userId, levelId } = this.props.navigation.state.params;
-  
+    let { userId, levelId, type } = this.props.navigation.state.params;
+    
     const settings = {
       method: "post",
       mode: "cors",
@@ -41,11 +41,11 @@ class Payment extends React.Component {
       })
     };
     
-    fetch(`${GET_PAYMENTS_DATA}?userId=${userId}&levelId=${levelId}`, settings)
+    fetch(`${GET_PAYMENTS_DATA}?userId=${userId}&levelId=${levelId}&type=${type}`, settings)
       .then(response => {
       
         if (response.status > 205 && response.status < 500) {
-        
+          
           this.setState(state => ({
             ...state,
             loading: false

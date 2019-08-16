@@ -12,7 +12,6 @@ class TabsContainer extends React.Component{
   }
   
   render() {
-    console.log(this, 'Dashboard screen');
     return (
       <View style={{
         flex: 1,

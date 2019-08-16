@@ -21,14 +21,10 @@ export const checkoutWebView = (data, signature) => {
                 embedTo: "#liqpay_checkout",
                 mode: "embed" // embed || popup,
             }).on("liqpay.callback", function(data) {
-                console.log(data.status);
-                console.log(data);
             }).on("liqpay.ready", function(data) {
-                console.log(data.status, 'it is success ?');
                 completeLevel();
                 // ready
             }).on("liqpay.close", function(data) {
-                console.log(data.status, 'it is failure ?');
                 rejectComplete();
                 // close
             });

@@ -29,13 +29,19 @@ const stateReseter = {
   overview: false,
   expires: "",
   lists: {
-    activeList: [],
-    completedList: [],
-    activeCount: 0,
-    completedCount: 0,
-    timeToNextLevelOpening: 0
+    activeLevelsList: [],
+    completedLevelsList: [],
+    activeDropsList: [],
+    completedDropsList: [],
+    activeLevelsCount: 0,
+    completedLevelsCount: 0,
+    activeDropsCount: 0,
+    completedDropsCount: 0,
+    timeToNextLongOpening: 0,
+    timeToNextShortOpening: 0
   },
   user: {},
+  history: [],
   loading: false
 };
 
@@ -48,13 +54,19 @@ class Dashboard extends React.Component {
     overview: "",
     expires: "",
     lists: {
-      activeList: [],
-      completedList: [],
-      activeCount: 0,
-      completedCount: 0,
-      timeToNextLevelOpening: 0
+      activeLevelsList: [],
+      completedLevelsList: [],
+      activeDropsList: [],
+      completedDropsList: [],
+      activeLevelsCount: 0,
+      completedLevelsCount: 0,
+      activeDropsCount: 0,
+      completedDropsCount: 0,
+      timeToNextLongOpening: 0,
+      timeToNextShortOpening: 0
     },
     user: {},
+    history: [],
     loading: false
   };
   
@@ -328,6 +340,7 @@ class Dashboard extends React.Component {
       refreshToken: this.state.refreshToken,
       refreshTokenHandler: this.refreshToken,
       levelId: levelId,
+      type: this.state.activeTab === "active" ? 1 : 2
     })
   };
   
@@ -377,7 +390,7 @@ class Dashboard extends React.Component {
           <FlatList
             style={{zIndex: 0}}
             data={
-              activeTab === "active" ? lists.activeList : lists.completedList
+              activeTab === "active" ? lists.activeLevelsList : activeTab === "drops" ? lists.activeDropsList : [...lists.completedLevelsList]
             }
             ListEmptyComponent={() => (<EmptyList/>)}
             renderItem={({item, index}) => (
@@ -386,7 +399,10 @@ class Dashboard extends React.Component {
                 index={index}
                 activeTab={this.state.activeTab}
                 pushHandler={this.pushToLevel}
-                timeToNext={this.state.lists.timeToNextLevelOpening}
+                timeToNext={
+                  this.state.activeTab === "active" ?
+                    this.state.lists.timeToNextLongOpening :
+                    this.state.lists.timeToNextShortOpening}
               />
             )}
             keyExtractor={item => item.id}

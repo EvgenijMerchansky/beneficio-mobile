@@ -149,9 +149,9 @@ class Level extends React.Component {
   componentDidMount () {
     this.setState(state => ({ ...state, loading: true }));
     
-    let { userId, levelId, accessToken, refreshTokenHandler, refreshToken } = this.props.navigation.state.params;
+    let { userId, levelId, accessToken, refreshTokenHandler, refreshToken, type } = this.props.navigation.state.params;
   
-    fetch(`${GET_LEVEL}?userId=${userId}&levelId=${levelId}`, {
+    fetch(`${GET_LEVEL}?type=${type}&userId=${userId}&levelId=${levelId}`, {
       method: "get",
       headers: {
         Accept: "application/json",
@@ -163,7 +163,7 @@ class Level extends React.Component {
       if (response.status > 205 && response.status < 500) {
         refreshTokenHandler(refreshToken, userId);
   
-        fetch(`${GET_LEVEL}?userId=${userId}&levelId=${levelId}`, {
+        fetch(`${GET_LEVEL}?type=${type}userId=${userId}&levelId=${levelId}`, {
           method: "get",
           headers: {
             Accept: "application/json",
@@ -200,7 +200,7 @@ class Level extends React.Component {
   }
   
   render() {
-  
+    
     if (this.state.loading) {
       return (
         <ActivityIndicatorWrapper/>
@@ -212,7 +212,8 @@ class Level extends React.Component {
       accessToken,
       refreshToken,
       refreshTokenHandler,
-      levelId
+      levelId,
+      type
     } = this.props.navigation.state.params;
     
     return [
@@ -308,6 +309,7 @@ class Level extends React.Component {
                 refreshToken: refreshToken,
                 refreshTokenHandler: refreshTokenHandler,
                 levelId: levelId,
+                type: type
               })}
             >
               <Text style={styles.completeButtonText}>

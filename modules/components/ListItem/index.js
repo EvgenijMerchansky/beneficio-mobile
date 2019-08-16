@@ -5,7 +5,7 @@ class ListItem extends React.PureComponent {
   render() {
   
     let { item } = this.props;
-  
+    
     return (
       <TouchableOpacity
         disabled={!item.isOpen}
@@ -19,9 +19,11 @@ class ListItem extends React.PureComponent {
             />
           </View>
           <View style={styles.DescriptionBlock}>
-            <Text style={styles.DescriptionBlockTitle}>{item.title}</Text>
+            <Text style={styles.DescriptionBlockTitle}>
+              {this.props.activeTab === "drops" ? <Text style={styles.dropItem}>DROP</Text> : ''} {item.title}
+            </Text>
             <Text style={styles.DescriptionBlockTime}>
-              Время прохождения: {item.time}
+              {this.props.activeTab === "drops" ? "Дата окончания: " : "Время прохождения: "}{item.time}{this.props.activeTab === "active" ? "ч" : ""}
             </Text>
             <Text style={styles.DescriptionBlockEarnings}>
               Заработок: ${item.possibleEarnings}
@@ -43,7 +45,7 @@ class ListItem extends React.PureComponent {
             />
             {this.props.index === 0 && !item.isOpen && this.props.activeTab !== "completed" && (
               <Text style={styles.timeToNext}>
-                {`Откроется\nчерез ${this.props.timeToNext}ч`}
+                {`Откроется\nчерез ${this.props.timeToNext}${this.props.activeTab === "active" ? "ч" : "м"}`}
               </Text>
             )}
           </View>
@@ -68,7 +70,10 @@ const styles = StyleSheet.create({
   ImageBlockDimensions: {
     objectFit: "cover",
     height: "100%",
-    width: 100
+    width: 100,
+    borderRightWidth: 10,
+    borderStyle: "solid",
+    borderColor: "#42a4ff"
   },
   DescriptionBlock: {
     flex: 1,
@@ -108,6 +113,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: "#bdbcc1",
     fontSize: 10
+  },
+  dropItem: {
+    backgroundColor: "#42a4ff",
+    color: "#fff",
+    borderRadius: 20
   }
 });
 

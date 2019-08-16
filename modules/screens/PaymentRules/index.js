@@ -68,11 +68,13 @@ const styles = StyleSheet.create({
   bodyCommonText: {
     color: "#a09fa4",
     paddingBottom: 10,
+    fontSize: 12
   },
   bodyCommonTextList: {
     color: "#a09fa4",
     paddingLeft: 15,
-    paddingBottom: 25
+    paddingBottom: 25,
+    fontSize: 12
   }
 });
 
