@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e30e8351-461c-4fb0-a981-937c5ad7ec05" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.expo-shared/assets.json" afterPath="$PROJECT_DIR$/.expo-shared/assets.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/components/HeaderTabs/index.js" afterPath="$PROJECT_DIR$/modules/components/HeaderTabs/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/components/ListItem/index.js" afterPath="$PROJECT_DIR$/modules/components/ListItem/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/components/TabsContainer/index.js" afterPath="$PROJECT_DIR$/modules/components/TabsContainer/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/constants/privacy.js" afterPath="$PROJECT_DIR$/modules/constants/privacy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/helpers/checkout.js" afterPath="$PROJECT_DIR$/modules/helpers/checkout.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/navigation.js" afterPath="$PROJECT_DIR$/modules/navigation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" afterPath="$PROJECT_DIR$/modules/screens/Dashboard/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Level/index.js" afterPath="$PROJECT_DIR$/modules/screens/Level/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Payment/index.js" afterPath="$PROJECT_DIR$/modules/screens/Payment/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" afterPath="$PROJECT_DIR$/modules/screens/PaymentRules/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/PrivacyPolicy/index.js" afterPath="$PROJECT_DIR$/modules/screens/PrivacyPolicy/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/screens/Rules/index.js" afterPath="$PROJECT_DIR$/modules/screens/Rules/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +24,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
+            <state relative-caret-position="-3260">
               <caret line="200" column="16" lean-forward="true" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
               <folding />
             </state>
@@ -78,9 +66,23 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/modules/components/ListItem/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="432">
+              <caret line="29" column="72" lean-forward="false" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+              <folding>
+                <marker date="1565959264000" expanded="true" signature="749:766" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="941:970" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="970:1141" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1167:1200" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1200:1270" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1296:1331" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1331:1396" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1438:1458" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1458:2004" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1478:1595" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1499:1532" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1967:1986" ph="..." />
+                <marker date="1565959264000" expanded="true" signature="1986:2004" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,10 +124,10 @@
       <find>createPaymentView</find>
       <find>View</find>
       <find>&lt;/li&gt;</find>
-      <find>GET</find>
-      <find>DescriptionBlock</find>
       <find>Уровень не</find>
       <find>conso</find>
+      <find>DescriptionBlock</find>
+      <find>GET</find>
     </findStrings>
     <replaceStrings>
       <replace>View</replace>
@@ -467,7 +469,7 @@
       <workItem from="1564658965849" duration="6559000" />
       <workItem from="1564734952337" duration="1795000" />
       <workItem from="1565612252308" duration="12201000" />
-      <workItem from="1565685220045" duration="19324000" />
+      <workItem from="1565685220045" duration="20640000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/EvgenijMerchansky/beneficio-mobile&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.&#10;">
       <created>1564411779185</created>
@@ -480,7 +482,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="352672000" />
+    <option name="totallyTimeSpent" value="353988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="48" width="1440" height="805" extended-state="0" />
@@ -820,14 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="200" column="16" lean-forward="true" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/screens/Level/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -844,11 +838,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/modules/screens/Dashboard/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3260">
+          <caret line="200" column="16" lean-forward="true" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/components/ListItem/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="432">
+          <caret line="29" column="72" lean-forward="false" selection-start-line="29" selection-start-column="72" selection-end-line="29" selection-end-column="72" />
+          <folding>
+            <marker date="1565959264000" expanded="true" signature="749:766" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="941:970" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="970:1141" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1167:1200" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1200:1270" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1296:1331" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1331:1396" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1438:1458" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1458:2004" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1478:1595" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1499:1532" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1967:1986" ph="..." />
+            <marker date="1565959264000" expanded="true" signature="1986:2004" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

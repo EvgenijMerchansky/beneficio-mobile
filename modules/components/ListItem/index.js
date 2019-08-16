@@ -20,7 +20,11 @@ class ListItem extends React.PureComponent {
           </View>
           <View style={styles.DescriptionBlock}>
             <Text style={styles.DescriptionBlockTitle}>
-              {this.props.activeTab === "drops" ? <Text style={styles.dropItem}>DROP</Text> : ''} {item.title}
+              {this.props.activeTab === "drops" ?
+                <Text style={styles.dropItem}>DROP</Text> :
+                ''
+              }
+              {this.props.activeTab === "drops" ? ` ${item.title}` : item.title}
             </Text>
             <Text style={styles.DescriptionBlockTime}>
               {this.props.activeTab === "drops" ? "Дата окончания: " : "Время прохождения: "}{item.time}{this.props.activeTab === "active" ? "ч" : ""}
