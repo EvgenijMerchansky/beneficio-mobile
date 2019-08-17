@@ -122,12 +122,15 @@ const styles = StyleSheet.create({
     width: 80
   },
   activeTabText: {
+    fontSize: 12,
     color: "#42A4FF"
   },
   completedTabText: {
+    fontSize: 12,
     color: "#42A4FF"
   },
   dropsTabText: {
+    fontSize: 12,
     color: "#42A4FF"
   }
 });

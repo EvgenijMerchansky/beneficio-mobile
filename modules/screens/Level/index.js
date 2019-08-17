@@ -302,7 +302,7 @@ class Level extends React.Component {
           </Text>
           <View style={styles.buttonsAligner}>
             <TouchableOpacity
-              style={styles.completeButton}
+              style={[styles.completeButton, { width: type === 1 ? "75%" : "100%" }]}
               onPress={() => this.props.navigation.push("Payment", {
                 userId: userId,
                 accessToken: accessToken,
@@ -313,20 +313,23 @@ class Level extends React.Component {
               })}
             >
               <Text style={styles.completeButtonText}>
-                Открыть следующий уровень (${this.state.level.percentPrice})
+                Следующий {type === 1 ? "уровень" : "дроп" } (${this.state.level.percentPrice})
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.helpButton}
-              onPress={() => this.props.navigation.push("SupportScreen", {
-                userId: userId,
-                levelId: levelId,
-              })}
-            >
-              <Text style={styles.helpButtonText}>
-                Помощь
-              </Text>
-            </TouchableOpacity>
+            {
+              type === 1 &&
+              <TouchableOpacity
+                style={styles.helpButton}
+                onPress={() => this.props.navigation.push("SupportScreen", {
+                  userId: userId,
+                  levelId: levelId,
+                })}
+              >
+                <Text style={styles.helpButtonText}>
+                  Help
+                </Text>
+              </TouchableOpacity>
+            }
           </View>
         </View>
       </View>
@@ -444,7 +447,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1
   },
   completeButton: {
-    width: "75%",
     color: "#fff",
     height: 40,
     borderRadius: 4,
