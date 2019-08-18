@@ -4,6 +4,7 @@ import {
   Text,
   View,
   TouchableOpacity,
+  AsyncStorage,
   Alert,
   FlatList,
   Image
@@ -22,12 +23,7 @@ const EmptyList = () => (
 );
 
 const stateReseter = {
-  userId: "",
   activeTab: "active",
-  accessToken: "",
-  refreshToken: "",
-  overview: false,
-  expires: "",
   lists: {
     activeLevelsList: [],
     completedLevelsList: [],
@@ -40,8 +36,6 @@ const stateReseter = {
     timeToNextLongOpening: 0,
     timeToNextShortOpening: 0
   },
-  user: {},
-  history: [],
   loading: false
 };
 
@@ -66,7 +60,6 @@ class Dashboard extends React.Component {
       timeToNextShortOpening: 0
     },
     user: {},
-    history: [],
     loading: false
   };
   
@@ -310,6 +303,7 @@ class Dashboard extends React.Component {
             ...stateReseter,
             loading: false
           }));
+          this.clearStorage();
           this.props.navigation.pop();
         });
       } else {
@@ -318,9 +312,16 @@ class Dashboard extends React.Component {
           ...stateReseter,
           loading: false
         }));
+        this.clearStorage();
         this.props.navigation.pop();
       }
     });
+  };
+  
+  clearStorage = () => {
+    (async () => {
+      await AsyncStorage.clear();
+    })()
   };
   
   pushToProfile = () => {

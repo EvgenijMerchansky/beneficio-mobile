@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
   Keyboard,
+  AsyncStorage,
   Alert
 } from "react-native";
 
@@ -43,8 +44,42 @@ class SplashScreen extends React.Component {
   };
   
   componentWillMount() {
+    
     this.globalFiledCleaner();
+    this.checkLogIn();
   }
+  
+  checkLogIn = () => {
+  
+    (async () => {
+      let userId = await AsyncStorage.getItem('userId');
+      let accessToken = await AsyncStorage.getItem('accessToken');
+      let refreshToken = await AsyncStorage.getItem('refreshToken');
+      let expires = await AsyncStorage.getItem('expires');
+      let overview = await AsyncStorage.getItem('overview');
+  
+      if (userId !== null &&
+        accessToken !== null &&
+        refreshToken !== null &&
+        expires !== null)
+      {
+        this.props.navigation.push(
+          "Dashboard",
+          {
+            accessToken: accessToken,
+            refreshToken: refreshToken,
+            expires: expires,
+            overview: overview,
+            userId: userId
+          }
+        );
+        
+        return false;
+      }
+      
+      return false;
+    })();
+  };
   
   globalFiledCleaner = () => {
     this.setState(state => ({
@@ -67,7 +102,7 @@ class SplashScreen extends React.Component {
   };
   
   getUserId = token => {
-    
+  
     window.atob = require('Base64').atob;
     
     let base64Url = token.split('.')[1];
@@ -101,6 +136,7 @@ class SplashScreen extends React.Component {
           });
         } else {
           response.json().then(data => {
+  
             this.setState(state => ({
               ...state,
               userId: this.getUserId(data.accessToken),
@@ -112,6 +148,16 @@ class SplashScreen extends React.Component {
               }
             }));
             
+            const loginCredentials = [
+              ["userId", ""+this.getUserId(data.accessToken)],
+              ["accessToken", ""+data.accessToken],
+              ["refreshToken", ""+data.refreshToken],
+              ["expires", ""+data.expires],
+              ["isLoggedIn", ""+data.overview]
+            ];
+            
+            AsyncStorage.multiSet(loginCredentials, () => {});
+  
             this.props.navigation.push("Dashboard", {
               accessToken: this.state.tokens.accessToken,
               refreshToken: this.state.tokens.refreshToken,
@@ -212,6 +258,7 @@ class SplashScreen extends React.Component {
               value={this.state.email.value}
               maxLength={50}
               label="email"
+              autoCapitalize="none"
             />
             <TextInput
               placeholder="Введите пароль"

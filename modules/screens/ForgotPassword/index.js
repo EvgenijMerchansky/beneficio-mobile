@@ -219,6 +219,7 @@ class ForgotPassword extends React.Component {
               value={this.state.email.value}
               maxLength={50}
               label="email"
+              autoCapitalize="none"
             />
             <TextInput
               placeholder="Новый пароль"
