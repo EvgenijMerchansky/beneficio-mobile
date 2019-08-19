@@ -247,7 +247,7 @@ class SplashScreen extends React.Component {
           <View style={styles.logo}>
             <Image
               style={imageDimensions.stretch}
-              source={require("../../../assets/app-logo-transparent.png")}
+              source={require("../../../assets/new_logo_splash_transparent.png")}
             />
           </View>
           <View>

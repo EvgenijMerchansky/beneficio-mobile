@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "beneficio",
-    "slug": "beneficio",
+    "name": "Beneficio",
+    "slug": "Beneficio",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [
@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/app-logo-small-transparent.png",
+    "icon": "./assets/new_logo_square_transparent.png",
     "splash": {
-      "image": "./assets/app-logo-small-transparent.png",
+      "image": "./assets/new_logo_square_transparent.png",
       "resizeMode": "contain",
       "backgroundColor": "#f9f8fd"
     },
