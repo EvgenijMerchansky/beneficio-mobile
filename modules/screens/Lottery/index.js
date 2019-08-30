@@ -6,7 +6,7 @@ import {
 
 import ActivityIndicator from "../../components/ActivityIndicatorWrapper";
 
-import { GET_PAYMENTS_DATA, COMPLETE_LEVEL_SERVER_URL } from '../../constants/apis';
+import { GET_LOTTERY_PAYMENT_DATA, COMPLETE_LOTTERY_SERVER_URL } from "../../constants/apis";
 
 import { checkoutWebView } from '../../helpers/checkout';
 
@@ -28,8 +28,8 @@ class Payment extends React.Component {
   getFormData = () => {
     this.setState(state => ({ ...state, loading: true }));
   
-    let { userId, levelId, type } = this.props.navigation.state.params;
-    
+    let { userId } = this.props.navigation.state.params;
+  
     const settings = {
       method: "post",
       mode: "cors",
@@ -38,22 +38,22 @@ class Payment extends React.Component {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        serverUrl: COMPLETE_LEVEL_SERVER_URL
+        userId: userId,
+        serverUrl: COMPLETE_LOTTERY_SERVER_URL
       })
     };
-    
-    fetch(`${GET_PAYMENTS_DATA}?userId=${userId}&levelId=${levelId}&type=${type}`, settings)
+  
+    fetch(GET_LOTTERY_PAYMENT_DATA, settings)
       .then(response => {
-      
         if (response.status > 205 && response.status < 500) {
-          
+  
           this.setState(state => ({
             ...state,
             loading: false
           }));
-          
+  
           Alert.alert(
-            "Уровень не найден",
+            "Лотарейный билет не найден",
             "Пожалуйста попробуйте снова."[
               {
                 text: "OK",
@@ -61,43 +61,44 @@ class Payment extends React.Component {
               }
             ]
           );
-        } else {
-          response.json().then(data => {
-  
-            let webView = this.createPaymentView(data.data, data.signature);
-  
-            this.setState(state => ({
-              ...state,
-              formData: {
-                ...data
-              },
-              webViewContent: webView,
-              loading: false
-            }));
-          });
+          
+          return false;
         }
+        response.json().then(res => {
+          let webView = this.createPaymentView(res.data, res.signature);
+  
+          this.setState(state => ({
+            ...state,
+            formData: {
+              ...res
+            },
+            webViewContent: webView,
+            loading: false
+          }));
+        })
       })
   };
   
   createPaymentView = (data, signature) => {
-  
+    
     return checkoutWebView(data, signature);
   };
   
   render() {
-  
+    
     if (this.state.loading) {
       return (
         <ActivityIndicator/>
       );
     }
-  
+    
     return(
       <WebView
         source={{html: `${this.state.webViewContent}`}}
         style={{
           backgroundColor: "#f9f8fd",
-          flex: 1
+          flex: 1,
+          padding: 20
         }}
         renderLoading={
           <ActivityIndicator/>

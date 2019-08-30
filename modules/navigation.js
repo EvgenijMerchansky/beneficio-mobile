@@ -18,6 +18,7 @@ import Payment from "./screens/Payment/index";
 import PaymentRules from "./screens/PaymentRules/index";
 import Rules from "./screens/Rules/index";
 import SupportScreen from "./screens/SupportScreen/index";
+import Lottery from "./screens/Lottery/index";
 
 const Navigator = createStackNavigator({
   SplashScreen: {
@@ -215,6 +216,22 @@ const Navigator = createStackNavigator({
     screen: Payment,
     navigationOptions: {
       title: "Открыть следующий",
+      headerStyle: {
+        backgroundColor: "#f9f8fd",
+        borderBottomWidth: 0
+      },
+      headerTitleStyle: {
+        fontWeight: "light",
+        color: "#000"
+      },
+      headerTintColor: "#000",
+      headerBackTitle: "Назад"
+    }
+  },
+  Lottery: {
+    screen: Lottery,
+    navigationOptions: {
+      title: "Купить билет",
       headerStyle: {
         backgroundColor: "#f9f8fd",
         borderBottomWidth: 0

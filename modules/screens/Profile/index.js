@@ -10,14 +10,18 @@ import {
   Alert
 } from "react-native";
 
-import { UPDATE_USER_AVATAR } from "../../constants/apis";
+import { UPDATE_USER_AVATAR, GET_LOTTERY_TICKET } from "../../constants/apis";
 
 import { ImagePicker, Permissions, Constants } from 'expo';
+
+import LotteryTicket from "../../components/LotteryTicket";
 
 class Profile extends React.Component {
   
   state = {
     image: null,
+    lotteryTicket: {},
+    lotteryTicketIsExists: undefined,
     loading: false,
   };
   
@@ -32,10 +36,46 @@ class Profile extends React.Component {
   };
   
   componentDidMount() {
-    let { user } = this.props.navigation.state.params;
+    let { user, getUpdatedUseProfile } = this.props.navigation.state.params;
     
-    this.setState(state => ({ ...state, image: user.avatarUrl }))
+    this.setState(state => ({ ...state, image: user.avatarUrl }));
+    
+    this.getLotteryTicket();
+  
+    getUpdatedUseProfile();
   }
+  
+  getLotteryTicket = () => {
+    this.setState(state => ({ ...state, loading: true }));
+  
+    fetch(GET_LOTTERY_TICKET, {
+      method: "get",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+    }).then(response => {
+      if (response.status > 205 && response.status < 500) {
+        this.setState(state => ({
+          ...state,
+          lotteryTicket: {},
+          lotteryTicketIsExists: false,
+          loading: false
+        }));
+        
+        return false;
+      }
+  
+      response.json().then(data => {
+        this.setState(state => ({
+          ...state,
+          lotteryTicket: {...data},
+          lotteryTicketIsExists: true,
+          loading: false
+        }));
+      });
+    })
+  };
   
   updateUserAvatar = (uri) => {
     this.setState(state => ({ ...state, loading: true }));
@@ -109,7 +149,8 @@ class Profile extends React.Component {
   
   render() {
     let { user } = this.props.navigation.state.params;
-
+    let { lotteryTicket, lotteryTicketIsExists } = this.state;
+  
     return(
       <ScrollView style={styles.container}>
         <View style={styles.header}>
@@ -169,6 +210,23 @@ class Profile extends React.Component {
               Внесенные комиссии: ${user.totalCommissions}
             </Text>
           </View>
+          <View style={styles.bodyTitleBlock}>
+            <Text style={styles.bodyTitleBlockText}>
+              Лотарея
+            </Text>
+            {
+              lotteryTicketIsExists ?
+                <LotteryTicket
+                  userId={user.id}
+                  lotteryIsBoughtByUser={user.lotteryIsBought}
+                  lotteryTicket={lotteryTicket}
+                  push={this.props.navigation.push}
+                /> :
+                <Text style={styles.emptyLotteryTicketSlot}>
+                  На данный момент нет доступных лотарейных билетов
+                </Text>
+            }
+          </View>
         </View>
       </ScrollView>
     )
@@ -223,11 +281,12 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     width: "100%",
-    paddingLeft: 20,
+    padding: 20,
     backgroundColor: "transparent",
     fontSize: 20
   },
   bodyTitleBlock: {
+    width: "100%",
     paddingTop: 15,
     paddingBottom: 15,
   },
@@ -296,6 +355,11 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderStyle: "solid",
     borderColor: "#8dc5ff"
+  },
+  emptyLotteryTicketSlot: {
+    color: "#bdbcc1",
+    paddingLeft: 20,
+    marginTop: 25
   }
 });
 

@@ -9,7 +9,13 @@ import {
   FlatList,
   Image
 } from "react-native";
-import { GET_LEVELS_LIST, SIGN_OUT, GET_USER, REFRESH_TOKEN } from "../../constants/apis";
+import {
+  GET_LEVELS_LIST,
+  SIGN_OUT,
+  GET_USER,
+  REFRESH_TOKEN,
+  GET_LOTTERY_TICKET
+} from "../../constants/apis";
 
 import HeaderTabs from "../../components/HeaderTabs/index";
 import ListItem from "../../components/ListItem/index";
@@ -36,6 +42,7 @@ const stateReseter = {
     timeToNextLongOpening: 0,
     timeToNextShortOpening: 0
   },
+  lotteryTicketIsExists: undefined,
   loading: false
 };
 
@@ -60,6 +67,8 @@ class Dashboard extends React.Component {
       timeToNextShortOpening: 0
     },
     user: {},
+    lotteryTicketIsExists: undefined,
+    lotteryBought: undefined,
     loading: false
   };
   
@@ -77,6 +86,11 @@ class Dashboard extends React.Component {
     this.getUserProfile(userId, accessToken);
     this.getListsAsync(userId, accessToken, refreshToken, expires);
     this.showOverview(overview);
+    this.getLotteryTicket();
+  }
+  
+  componentWillUnmount() {
+    this.getLotteryTicket();
   }
   
   showOverview = (overview) => {
@@ -95,6 +109,36 @@ class Dashboard extends React.Component {
     }
     
     return false;
+  };
+  
+  getLotteryTicket = () => {
+    this.setState(state => ({ ...state, loading: true }));
+    
+    fetch(GET_LOTTERY_TICKET, {
+      method: "get",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
+    }).then(response => {
+      if (response.status > 205 && response.status < 500) {
+        this.setState(state => ({
+          ...state,
+          lotteryTicketIsExists: false,
+          loading: false
+        }));
+        
+        return false;
+      }
+      
+      response.json().then(() => {
+        this.setState(state => ({
+          ...state,
+          lotteryTicketIsExists: true,
+          loading: false
+        }));
+      });
+    })
   };
   
   refreshToken = (refreshToken, userId) => {
@@ -128,7 +172,10 @@ class Dashboard extends React.Component {
             [
               {
                 text: "OK",
-                onPress: () => this.props.navigation.push("SplashScreen")
+                onPress: () => {
+                  this.props.navigation.push("SplashScreen");
+                  this.clearStorage();
+                }
               }
             ]
           );
@@ -146,13 +193,6 @@ class Dashboard extends React.Component {
           }));
         });
       })
-      .catch(() => {
-        this.setState(state => ({
-          ...state,
-          ...stateReseter,
-          loading: false
-        }));
-      });
   };
   
   getListsAsync = (userId, bearer, refreshToken, expires) => {
@@ -164,7 +204,10 @@ class Dashboard extends React.Component {
       refreshToken,
       expires
     }));
-    
+  
+    this.getLotteryTicket();
+    this.getUserProfile(userId, this.state.accessToken);
+  
     fetch(GET_LEVELS_LIST, {
       method: "get",
       headers: {
@@ -174,6 +217,7 @@ class Dashboard extends React.Component {
         userId: userId
       }
     }).then(response => {
+  
       if (response.status > 205 && response.status < 500) {
         this.refreshToken(refreshToken, userId);
         
@@ -240,6 +284,7 @@ class Dashboard extends React.Component {
                   user: {
                     ...data
                   },
+                  lotteryBought: data.lotteryIsBought,
                   loading: false
                 }));
               })
@@ -251,6 +296,7 @@ class Dashboard extends React.Component {
               user: {
                 ...data
               },
+              lotteryBought: data.lotteryIsBought,
               loading: false
             }));
           });
@@ -353,7 +399,9 @@ class Dashboard extends React.Component {
       expires,
       lists,
       loading,
-      activeTab
+      activeTab,
+      lotteryTicketIsExists,
+      lotteryBought
     } = this.state;
   
     return (
@@ -382,7 +430,12 @@ class Dashboard extends React.Component {
             >
               <Image
                 style={styles.imageDimensions}
-                source={require("../../../assets/profile4.png")}
+                source={
+                  lotteryTicketIsExists && !lotteryBought ?
+                    require("../../../assets/profile-lottery-exists.png") :
+                      lotteryTicketIsExists && lotteryBought ?
+                        require("../../../assets/profile-lottery-bought.png") :
+                        require("../../../assets/profile.png")}
               />
             </TouchableOpacity>
           </View>
@@ -433,7 +486,7 @@ class Dashboard extends React.Component {
               source={require("../../../assets/privacy.png")}
             />
             <Text style={styles.footerPrivacyText}>
-              Политики
+              Политика
             </Text>
           </TouchableOpacity>
           <TouchableOpacity
