@@ -407,8 +407,6 @@ class Dashboard extends React.Component {
       lotteryBought
     } = this.state;
   
-    console.log(this.state.accessToken, 'access token');
-  
     return (
       <View style={{ flex: 1 }}>
         <View>
