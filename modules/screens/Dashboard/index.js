@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
     } = this.props.navigation.state.params;
   
     this.setState(state => ({ ...state, overview: overview }));
-
+    
     this.getUserProfile(userId, accessToken);
     this.getListsAsync(userId, accessToken, refreshToken, expires);
     this.showOverview(overview);
@@ -206,7 +206,6 @@ class Dashboard extends React.Component {
     }));
   
     this.getLotteryTicket();
-    this.getUserProfile(userId, this.state.accessToken);
   
     fetch(GET_LEVELS_LIST, {
       method: "get",
@@ -219,6 +218,7 @@ class Dashboard extends React.Component {
     }).then(response => {
   
       if (response.status > 205 && response.status < 500) {
+  
         this.refreshToken(refreshToken, userId);
         
         fetch(GET_LEVELS_LIST, {
@@ -272,7 +272,8 @@ class Dashboard extends React.Component {
     fetch(GET_USER, settings)
       .then(response => {
   
-        if (response.status > 205 && response.status < 500) {
+        if (response.status === 400) {
+  
           this.refreshToken(this.state.refreshToken, this.state.userId);
           
           fetch(GET_USER, settings)
@@ -291,6 +292,7 @@ class Dashboard extends React.Component {
             })
         } else {
           response.json().then(data => {
+            
             this.setState(state => ({
               ...state,
               user: {
@@ -371,6 +373,7 @@ class Dashboard extends React.Component {
   };
   
   pushToProfile = () => {
+  
     this.props.navigation.push("ProfileScreen", {
       user: this.state.user,
       getUpdatedUseProfile: () => this.getUserProfile(this.state.userId, this.state.accessToken) })
@@ -403,6 +406,8 @@ class Dashboard extends React.Component {
       lotteryTicketIsExists,
       lotteryBought
     } = this.state;
+  
+    console.log(this.state.accessToken, 'access token');
   
     return (
       <View style={{ flex: 1 }}>

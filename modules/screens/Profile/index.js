@@ -150,7 +150,7 @@ class Profile extends React.Component {
   render() {
     let { user } = this.props.navigation.state.params;
     let { lotteryTicket, lotteryTicketIsExists } = this.state;
-  
+    
     return(
       <ScrollView style={styles.container}>
         <View style={styles.header}>
