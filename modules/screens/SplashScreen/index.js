@@ -10,7 +10,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   AsyncStorage,
-  Alert
+  Alert,
+  StatusBar
 } from "react-native";
 
 import ActivityIndicator from "../../components/ActivityIndicatorWrapper";
@@ -237,12 +238,16 @@ class SplashScreen extends React.Component {
   };
   
   render() {
+    let { routeName } = this.props.navigation.state;
+  
+  
     if (this.state.loading) {
       return (
         <ActivityIndicator/>
       );
     }
-    
+  
+  
     return (
       <TouchableWithoutFeedback
         onPress={this.dismissKeyboard}
@@ -254,6 +259,10 @@ class SplashScreen extends React.Component {
           style={styles.container}
           keyboardShouldPersistTaps="handled"
         >
+          <StatusBar
+            backgroundColor="blue"
+            barStyle="dark-content"
+          />
           <View style={styles.logo}>
             <Image
               style={imageDimensions.stretch}

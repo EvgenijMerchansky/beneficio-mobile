@@ -7,8 +7,10 @@ import {
   AsyncStorage,
   Alert,
   FlatList,
-  Image
+  Image,
+  StatusBar
 } from "react-native";
+
 import {
   GET_LEVELS_LIST,
   SIGN_OUT,
@@ -410,6 +412,10 @@ class Dashboard extends React.Component {
     return (
       <View style={{ flex: 1 }}>
         <View>
+          <StatusBar
+            backgroundColor="blue"
+            barStyle="dark-content"
+          />
           <View style={styles.header}>
             <TouchableOpacity
               style={styles.headerLogout}

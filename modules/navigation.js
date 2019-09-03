@@ -294,6 +294,4 @@ const Navigator = createStackNavigator({
   }
 });
 
-
-
 export default Navigator;
