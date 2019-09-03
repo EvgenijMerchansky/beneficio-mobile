@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Beneficio",
-    "slug": "Beneficio",
+    "name": "Benebuild",
+    "slug": "Benebuild",
     "privacy": "public",
     "sdkVersion": "33.0.0",
     "platforms": [
       "ios",
       "android"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/new_logo_square_white.png",
     "splash": {
@@ -24,7 +24,7 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.beneficio.found"
+      "bundleIdentifier": "com.beneficio.found.final"
     },
     "android": {
       "package": "com.beneficio.beneficio"
