@@ -238,9 +238,6 @@ class SplashScreen extends React.Component {
   };
   
   render() {
-    let { routeName } = this.props.navigation.state;
-  
-  
     if (this.state.loading) {
       return (
         <ActivityIndicator/>
